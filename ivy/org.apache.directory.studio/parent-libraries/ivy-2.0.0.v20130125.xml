@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="org.apache.directory.studio"
+		module="parent-libraries"
+		revision="2.0.0.v20130125"
+		status="release"
+		publication="20130126003422"
+	>
+		<description homepage="" />
+		<m:properties__org.apache.commons.io.version>2.4</m:properties__org.apache.commons.io.version>
+		<m:properties__maven.model.version>3.0.4</m:properties__maven.model.version>
+		<m:properties__org.apache.directory.server.version>2.0.0-M10</m:properties__org.apache.directory.server.version>
+		<m:properties__xerces.xercesimpl.version>2.10.0</m:properties__xerces.xercesimpl.version>
+		<m:properties__org.apache.commons.logging.version>1.1.1</m:properties__org.apache.commons.logging.version>
+		<m:properties__distMgmtSiteUrl>scpexe://people.apache.org/www/directory.apache.org/studio/gen-docs/${project.version}</m:properties__distMgmtSiteUrl>
+		<m:properties__maven.project.version>3.0-alpha-2</m:properties__maven.project.version>
+		<m:properties__org.apache.commons.codec.version>1.6</m:properties__org.apache.commons.codec.version>
+		<m:properties__org.xpp3.version>1.1.4c</m:properties__org.xpp3.version>
+		<m:properties__org.apache.directory.api.validversion>1.0.0.M15</m:properties__org.apache.directory.api.validversion>
+		<m:properties__org.slf4j.version>1.7.1</m:properties__org.slf4j.version>
+		<m:properties__org.apache.mina.core.version>2.0.7</m:properties__org.apache.mina.core.version>
+		<m:properties__org.apache.httpcomponents.version>4.1.2</m:properties__org.apache.httpcomponents.version>
+		<m:properties__maven.artifact.version>3.0.4</m:properties__maven.artifact.version>
+		<m:properties__junit.version>4.10</m:properties__junit.version>
+		<m:properties__org.bouncycastle.bcprov.jdk15.version>140</m:properties__org.bouncycastle.bcprov.jdk15.version>
+		<m:properties__org.apache.commons.pool.version>1.6</m:properties__org.apache.commons.pool.version>
+		<m:properties__studio.dist.url>${project.distributionManagement.repository.url}</m:properties__studio.dist.url>
+		<m:properties__org.apache.directory.api.version>1.0.0-M15</m:properties__org.apache.directory.api.version>
+		<m:properties__org.apache.xmlgraphics.fop.version>1.0</m:properties__org.apache.xmlgraphics.fop.version>
+		<m:properties__org.apache.commons.lang.version>2.6</m:properties__org.apache.commons.lang.version>
+		<m:properties__org.apache.commons.collections.version>3.2.1</m:properties__org.apache.commons.collections.version>
+		<m:properties__org.dom4j.version>1.6.1</m:properties__org.dom4j.version>
+		<m:properties__org.apache.directory.server.validversion>2.0.0.M10</m:properties__org.apache.directory.server.validversion>
+		<m:properties__findbugs.annotations.version>1.0.0</m:properties__findbugs.annotations.version>
+		<m:properties__skin.version>1.0.2</m:properties__skin.version>
+		<m:properties__maven.plugin.api.version>3.0.4</m:properties__maven.plugin.api.version>
+		<m:properties__com.bandlem.eclipse.fullscreen.version>1.0.4.201108061054</m:properties__com.bandlem.eclipse.fullscreen.version>
+		<m:properties__checkstyle.version>4.1</m:properties__checkstyle.version>
+		<m:properties__org.antlr.version>2.7.7</m:properties__org.antlr.version>
+		<m:properties__org.xpp3.validversion>1.1.4.c</m:properties__org.xpp3.validversion>
+		<m:properties__net.sf.ehcache.version>2.4.4</m:properties__net.sf.ehcache.version>
+		<m:properties__maven.dependency.plugin.version>2.4</m:properties__maven.dependency.plugin.version>
+		<m:properties__org.apache.poi.version>3.7</m:properties__org.apache.poi.version>
+		<m:properties__org.apache.logging.log4j.version>1.2.17</m:properties__org.apache.logging.log4j.version>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:properties__project.reporting.outputEncoding>UTF-8</m:properties__project.reporting.outputEncoding>
+		<m:properties__distMgmtSnapshotsUrl>https://repository.apache.org/content/repositories/snapshots</m:properties__distMgmtSnapshotsUrl>
+		<m:properties__gpg.useagent>true</m:properties__gpg.useagent>
+		<m:properties__distMgmtSnapshotsName>Apache Development Snapshot Repository</m:properties__distMgmtSnapshotsName>
+		<m:properties__sourceReleaseAssemblyDescriptor>source-release</m:properties__sourceReleaseAssemblyDescriptor>
+		<m:properties__organization.logo>http://www.apache.org/images/asf_logo_wide.gif</m:properties__organization.logo>
+		<m:maven.plugins>org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.geronimo.genesis.plugins__tools-maven-plugin__null|org.apache.maven.plugins__maven-site-plugin__null|org.apache.felix__maven-bundle-plugin__null|org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.geronimo.genesis.plugins__tools-maven-plugin__null|org.apache.maven.plugins__maven-site-plugin__null|org.apache.felix__maven-bundle-plugin__null|org.apache.directory.studio__studio-maven-plugin__null|org.apache.felix__maven-bundle-plugin__null|org.apache.maven.plugins__maven-eclipse-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-compiler-plugin__null|org.apache.maven.plugins__maven-site-plugin__null|org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.geronimo.genesis.plugins__tools-maven-plugin__null|org.apache.maven.plugins__maven-site-plugin__null|org.apache.felix__maven-bundle-plugin__null|org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.maven.plugins__maven-remote-resources-plugin__null|org.apache.geronimo.genesis.plugins__tools-maven-plugin__null|org.apache.maven.plugins__maven-site-plugin__null|org.apache.felix__maven-bundle-plugin__null|org.apache.directory.studio__studio-maven-plugin__null|org.apache.felix__maven-bundle-plugin__null|org.apache.maven.plugins__maven-eclipse-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-compiler-plugin__null|org.apache.maven.plugins__maven-site-plugin__null</m:maven.plugins>
+		<m:dependency.management__com.bandlem.eclipse.fullscreen__feature__version>1.0.4.201108061054</m:dependency.management__com.bandlem.eclipse.fullscreen__feature__version>
+		<m:dependency.management__com.bandlem.eclipse.fullscreen__ui__version>1.0.4.201108061054</m:dependency.management__com.bandlem.eclipse.fullscreen__ui__version>
+		<m:dependency.management__org.apache.directory.studio__net.sf.ehcache.core__version>2.4.4</m:dependency.management__org.apache.directory.studio__net.sf.ehcache.core__version>
+		<m:dependency.management__org.apache.directory.studio__org.antlr.antlr__version>2.7.7</m:dependency.management__org.apache.directory.studio__org.antlr.antlr__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.commons.codec__version>1.6</m:dependency.management__org.apache.directory.studio__org.apache.commons.codec__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.commons.collections__version>3.2.1</m:dependency.management__org.apache.directory.studio__org.apache.commons.collections__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.commons.io__version>2.4</m:dependency.management__org.apache.directory.studio__org.apache.commons.io__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.commons.lang__version>2.6</m:dependency.management__org.apache.directory.studio__org.apache.commons.lang__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.commons.logging__version>1.1.1</m:dependency.management__org.apache.directory.studio__org.apache.commons.logging__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.commons.pool__version>1.6</m:dependency.management__org.apache.directory.studio__org.apache.commons.pool__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.config__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.config__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core.api__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core.api__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core.avl__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core.avl__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core.constants__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.core.constants__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.i18n__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.i18n__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.ldif.partition__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.ldif.partition__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.directory.server.xdbm.partition__version>2.0.0-M10</m:dependency.management__org.apache.directory.studio__org.apache.directory.server.xdbm.partition__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.httpcomponents.httpclient__version>4.1.2</m:dependency.management__org.apache.directory.studio__org.apache.httpcomponents.httpclient__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.httpcomponents.httpcore__version>4.1.2</m:dependency.management__org.apache.directory.studio__org.apache.httpcomponents.httpcore__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.logging.log4j__version>1.2.17</m:dependency.management__org.apache.directory.studio__org.apache.logging.log4j__version>
+		<m:dependency.management__org.apache.directory.studio__org.apache.mina.core__version>2.0.7</m:dependency.management__org.apache.directory.studio__org.apache.mina.core__version>
+		<m:dependency.management__org.apache.directory.studio__org.bouncycastle.bcprov.jdk15__version>140</m:dependency.management__org.apache.directory.studio__org.bouncycastle.bcprov.jdk15__version>
+		<m:dependency.management__org.apache.directory.studio__org.dom4j.dom4j__version>1.6.1</m:dependency.management__org.apache.directory.studio__org.dom4j.dom4j__version>
+		<m:dependency.management__org.apache.directory.studio__org.slf4j.api__version>1.7.1</m:dependency.management__org.apache.directory.studio__org.slf4j.api__version>
+		<m:dependency.management__org.apache.directory.studio__org.slf4j.log4j12__version>1.7.1</m:dependency.management__org.apache.directory.studio__org.slf4j.log4j12__version>
+		<m:dependency.management__org.apache.directory.studio__org.xpp3.xpp3__version>1.1.4.c</m:dependency.management__org.apache.directory.studio__org.xpp3.xpp3__version>
+		<m:dependency.management__org.apache.directory.studio__aciitemeditor__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__aciitemeditor__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds.feature__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds.help__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds.help__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds-launcher__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds-launcher__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds.configuration__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds.configuration__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds.configuration.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds.configuration.feature__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds.configuration.v2__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds.configuration.v2__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds.configuration.v2.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds.configuration.v2.feature__version>
+		<m:dependency.management__org.apache.directory.studio__apacheds.configuration.help__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__apacheds.configuration.help__version>
+		<m:dependency.management__org.apache.directory.studio__common.ui__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__common.ui__version>
+		<m:dependency.management__org.apache.directory.studio__common.core__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__common.core__version>
+		<m:dependency.management__org.apache.directory.studio__connection.core__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__connection.core__version>
+		<m:dependency.management__org.apache.directory.studio__connection.ui__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__connection.ui__version>
+		<m:dependency.management__org.apache.directory.studio__ldapbrowser.common__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapbrowser.common__version>
+		<m:dependency.management__org.apache.directory.studio__ldapbrowser.core__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapbrowser.core__version>
+		<m:dependency.management__org.apache.directory.studio__ldapbrowser.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapbrowser.feature__version>
+		<m:dependency.management__org.apache.directory.studio__ldapbrowser.help__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapbrowser.help__version>
+		<m:dependency.management__org.apache.directory.studio__ldapbrowser.ui__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapbrowser.ui__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v153__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v153__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v154__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v154__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v155__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v155__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v156__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v156__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v157__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v157__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v200__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers.apacheds.v200__version>
+		<m:dependency.management__org.apache.directory.studio__ldapservers.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldapservers.feature__version>
+		<m:dependency.management__org.apache.directory.studio__ldifeditor__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldifeditor__version>
+		<m:dependency.management__org.apache.directory.studio__ldifeditor.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldifeditor.feature__version>
+		<m:dependency.management__org.apache.directory.studio__ldifeditor.help__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldifeditor.help__version>
+		<m:dependency.management__org.apache.directory.studio__ldifparser__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__ldifparser__version>
+		<m:dependency.management__org.apache.directory.studio__rcp__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__rcp__version>
+		<m:dependency.management__org.apache.directory.studio__rcp.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__rcp.feature__version>
+		<m:dependency.management__org.apache.directory.studio__rcp.fullscreen__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__rcp.fullscreen__version>
+		<m:dependency.management__org.apache.directory.studio__rcp.help__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__rcp.help__version>
+		<m:dependency.management__org.apache.directory.studio__schemaeditor__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__schemaeditor__version>
+		<m:dependency.management__org.apache.directory.studio__schemaeditor.feature__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__schemaeditor.feature__version>
+		<m:dependency.management__org.apache.directory.studio__schemaeditor.help__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__schemaeditor.help__version>
+		<m:dependency.management__org.apache.directory.studio__test.integration.core__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__test.integration.core__version>
+		<m:dependency.management__org.apache.directory.studio__test.integration.ui__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__test.integration.ui__version>
+		<m:dependency.management__org.apache.directory.studio__updatesite__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__updatesite__version>
+		<m:dependency.management__org.apache.directory.studio__valueeditors__version>2.0.0.v20130125</m:dependency.management__org.apache.directory.studio__valueeditors__version>
+		<m:dependency.management__org.apache.maven__maven-plugin-api__version>3.0.4</m:dependency.management__org.apache.maven__maven-plugin-api__version>
+		<m:dependency.management__org.apache.maven.plugins__maven-dependency-plugin__version>2.4</m:dependency.management__org.apache.maven.plugins__maven-dependency-plugin__version>
+		<m:dependency.management__org.apache.maven__maven-artifact__version>3.0.4</m:dependency.management__org.apache.maven__maven-artifact__version>
+		<m:dependency.management__org.apache.maven__maven-model__version>3.0.4</m:dependency.management__org.apache.maven__maven-model__version>
+		<m:dependency.management__org.apache.maven__maven-project__version>3.0-alpha-2</m:dependency.management__org.apache.maven__maven-project__version>
+		<m:dependency.management__org.apache.directory.studio.launcher.linux__x86__version>2.0</m:dependency.management__org.apache.directory.studio.launcher.linux__x86__version>
+		<m:dependency.management__org.apache.directory.studio.launcher.linux__x86_64__version>2.0</m:dependency.management__org.apache.directory.studio.launcher.linux__x86_64__version>
+		<m:dependency.management__org.apache.directory.studio.launcher.macosx__x86__version>2.0.v20121026</m:dependency.management__org.apache.directory.studio.launcher.macosx__x86__version>
+		<m:dependency.management__org.apache.directory.studio.launcher.macosx__x86_64__version>2.0.v20121026</m:dependency.management__org.apache.directory.studio.launcher.macosx__x86_64__version>
+		<m:dependency.management__org.apache.directory.studio.launcher.win32__x86__version>2.0</m:dependency.management__org.apache.directory.studio.launcher.win32__x86__version>
+		<m:dependency.management__org.apache.directory.studio.launcher.win32__x86_64__version>2.0</m:dependency.management__org.apache.directory.studio.launcher.win32__x86_64__version>
+		<m:dependency.management__com.ibm__icu__version>4.4.2.v20110823</m:dependency.management__com.ibm__icu__version>
+		<m:dependency.management__javax__el__version>2.2.0.v201108011116</m:dependency.management__javax__el__version>
+		<m:dependency.management__javax__servlet__version>3.0.0.v201112011016</m:dependency.management__javax__servlet__version>
+		<m:dependency.management__javax.servlet__jsp__version>2.2.0.v201112011158</m:dependency.management__javax.servlet__jsp__version>
+		<m:dependency.management__org.apache.commons__logging__version>1.0.4.v201101211617</m:dependency.management__org.apache.commons__logging__version>
+		<m:dependency.management__org.apache.jasper__glassfish__version>2.2.2.v201205150955</m:dependency.management__org.apache.jasper__glassfish__version>
+		<m:dependency.management__org.apache__lucene__version>2.9.1.v201101211721</m:dependency.management__org.apache__lucene__version>
+		<m:dependency.management__org.apache.lucene__analysis__version>2.9.1.v201101211721</m:dependency.management__org.apache.lucene__analysis__version>
+		<m:dependency.management__org.apache.lucene__core__version>2.9.1.v201101211721</m:dependency.management__org.apache.lucene__core__version>
+		<m:dependency.management__org.eclipse__compare__version>3.5.300.v20120522-1148-studio</m:dependency.management__org.eclipse__compare__version>
+		<m:dependency.management__org.eclipse.compare__core__version>3.5.200.v20120522-1148</m:dependency.management__org.eclipse.compare__core__version>
+		<m:dependency.management__org.eclipse.core__boot__version>3.1.300.v20120523-2004</m:dependency.management__org.eclipse.core__boot__version>
+		<m:dependency.management__org.eclipse.core__commands__version>3.6.1.v20120521-2332</m:dependency.management__org.eclipse.core__commands__version>
+		<m:dependency.management__org.eclipse.core__contenttype__version>3.4.200.v20120523-2004</m:dependency.management__org.eclipse.core__contenttype__version>
+		<m:dependency.management__org.eclipse.core__databinding__version>1.4.1.v20120521-2332</m:dependency.management__org.eclipse.core__databinding__version>
+		<m:dependency.management__org.eclipse.core.databinding__observable__version>1.4.1.v20120521-2332</m:dependency.management__org.eclipse.core.databinding__observable__version>
+		<m:dependency.management__org.eclipse.core.databinding__property__version>1.4.100.v20120523-1956</m:dependency.management__org.eclipse.core.databinding__property__version>
+		<m:dependency.management__org.eclipse.core__expressions__version>3.4.400.v20120523-2004</m:dependency.management__org.eclipse.core__expressions__version>
+		<m:dependency.management__org.eclipse.core__filebuffers__version>3.5.200.v20120523-1310</m:dependency.management__org.eclipse.core__filebuffers__version>
+		<m:dependency.management__org.eclipse.core__filesystem__version>1.3.200.v20120522-2012</m:dependency.management__org.eclipse.core__filesystem__version>
+		<m:dependency.management__org.eclipse.core.filesystem.linux__x86__version>1.4.0.v20120522-1137</m:dependency.management__org.eclipse.core.filesystem.linux__x86__version>
+		<m:dependency.management__org.eclipse.core.filesystem.linux__x86_64__version>1.2.0.v20120522-1137</m:dependency.management__org.eclipse.core.filesystem.linux__x86_64__version>
+		<m:dependency.management__org.eclipse.core.filesystem__macosx__version>1.3.0.v20120522-1137</m:dependency.management__org.eclipse.core.filesystem__macosx__version>
+		<m:dependency.management__org.eclipse.core.filesystem.win32__x86__version>1.1.300.v20120522-1137</m:dependency.management__org.eclipse.core.filesystem.win32__x86__version>
+		<m:dependency.management__org.eclipse.core.filesystem.win32__x86_64__version>1.1.300.v20120522-1137</m:dependency.management__org.eclipse.core.filesystem.win32__x86_64__version>
+		<m:dependency.management__org.eclipse.core__jobs__version>3.5.200.v20120521-2346</m:dependency.management__org.eclipse.core__jobs__version>
+		<m:dependency.management__org.eclipse.core__net__version>1.2.200.v20120522-1148</m:dependency.management__org.eclipse.core__net__version>
+		<m:dependency.management__org.eclipse.core.net.linux__x86__version>1.1.200.v20120522-1148</m:dependency.management__org.eclipse.core.net.linux__x86__version>
+		<m:dependency.management__org.eclipse.core.net.linux__x86_64__version>1.1.0.v20120522-1148</m:dependency.management__org.eclipse.core.net.linux__x86_64__version>
+		<m:dependency.management__org.eclipse.core.net.win32__x86__version>1.0.100.v20120522-1148</m:dependency.management__org.eclipse.core.net.win32__x86__version>
+		<m:dependency.management__org.eclipse.core.net.win32__x86_64__version>1.0.100.v20120522-1148</m:dependency.management__org.eclipse.core.net.win32__x86_64__version>
+		<m:dependency.management__org.eclipse.core__resources__version>3.8.1.v20120802-154922</m:dependency.management__org.eclipse.core__resources__version>
+		<m:dependency.management__org.eclipse.core.resources.win32__x86__version>3.5.100.v20120522-1137</m:dependency.management__org.eclipse.core.resources.win32__x86__version>
+		<m:dependency.management__org.eclipse.core__runtime__version>3.8.0.v20120521-2346</m:dependency.management__org.eclipse.core__runtime__version>
+		<m:dependency.management__org.eclipse.core.runtime__compatibility__version>3.2.200.v20120521-2346</m:dependency.management__org.eclipse.core.runtime__compatibility__version>
+		<m:dependency.management__org.eclipse.core.runtime.compatibility__auth__version>3.2.300.v20120523-2004</m:dependency.management__org.eclipse.core.runtime.compatibility__auth__version>
+		<m:dependency.management__org.eclipse.core.runtime.compatibility__registry__version>3.5.100.v20120521-2346</m:dependency.management__org.eclipse.core.runtime.compatibility__registry__version>
+		<m:dependency.management__org.eclipse.core__variables__version>3.2.600.v20120521-2012</m:dependency.management__org.eclipse.core__variables__version>
+		<m:dependency.management__org.eclipse.debug__core__version>3.7.100.v20120521-2012</m:dependency.management__org.eclipse.debug__core__version>
+		<m:dependency.management__org.eclipse.debug__ui__version>3.8.1.v20120718-192144-studio</m:dependency.management__org.eclipse.debug__ui__version>
+		<m:dependency.management__org.eclipse__ecf__version>3.1.300.v20120610-1946</m:dependency.management__org.eclipse__ecf__version>
+		<m:dependency.management__org.eclipse.ecf__filetransfer__version>5.0.0.v20120610-1946</m:dependency.management__org.eclipse.ecf__filetransfer__version>
+		<m:dependency.management__org.eclipse.ecf__identity__version>3.1.200.v20120610-1946</m:dependency.management__org.eclipse.ecf__identity__version>
+		<m:dependency.management__org.eclipse.ecf.provider__filetransfer__version>3.2.0.v20120610-1946</m:dependency.management__org.eclipse.ecf.provider__filetransfer__version>
+		<m:dependency.management__org.eclipse.equinox__app__version>1.3.100.v20120522-1841</m:dependency.management__org.eclipse.equinox__app__version>
+		<m:dependency.management__org.eclipse.equinox__common__version>3.6.100.v20120522-1841</m:dependency.management__org.eclipse.equinox__common__version>
+		<m:dependency.management__org.eclipse.equinox.http__jetty__version>3.0.0.v20120522-1841</m:dependency.management__org.eclipse.equinox.http__jetty__version>
+		<m:dependency.management__org.eclipse.equinox.http__registry__version>1.1.200.v20120522-2049</m:dependency.management__org.eclipse.equinox.http__registry__version>
+		<m:dependency.management__org.eclipse.equinox.http__servlet__version>1.1.300.v20120522-1841</m:dependency.management__org.eclipse.equinox.http__servlet__version>
+		<m:dependency.management__org.eclipse.equinox.jsp__jasper__version>1.0.400.v20120522-2049</m:dependency.management__org.eclipse.equinox.jsp__jasper__version>
+		<m:dependency.management__org.eclipse.equinox.jsp.jasper__registry__version>1.0.300.v20120522-2049</m:dependency.management__org.eclipse.equinox.jsp.jasper__registry__version>
+		<m:dependency.management__org.eclipse.equinox__launcher__version>1.3.0.v20120522-1813</m:dependency.management__org.eclipse.equinox__launcher__version>
+		<m:dependency.management__org.eclipse.equinox.launcher.cocoa__macosx__version>1.1.200.v20120522-1813</m:dependency.management__org.eclipse.equinox.launcher.cocoa__macosx__version>
+		<m:dependency.management__org.eclipse.equinox.launcher.cocoa.macosx__x86_64__version>1.1.200.v20120522-1813</m:dependency.management__org.eclipse.equinox.launcher.cocoa.macosx__x86_64__version>
+		<m:dependency.management__org.eclipse.equinox.launcher.gtk.linux__x86__version>1.1.200.v20120522-1813</m:dependency.management__org.eclipse.equinox.launcher.gtk.linux__x86__version>
+		<m:dependency.management__org.eclipse.equinox.launcher.gtk.linux__x86_64__version>1.1.200.v20120522-1813</m:dependency.management__org.eclipse.equinox.launcher.gtk.linux__x86_64__version>
+		<m:dependency.management__org.eclipse.equinox.launcher.win32.win32__x86__version>1.1.200.v20120522-1813</m:dependency.management__org.eclipse.equinox.launcher.win32.win32__x86__version>
+		<m:dependency.management__org.eclipse.equinox.launcher.win32.win32__x86_64__version>1.1.200.v20120522-1813</m:dependency.management__org.eclipse.equinox.launcher.win32.win32__x86_64__version>
+		<m:dependency.management__org.eclipse.equinox.p2.artifact__repository__version>1.1.200.v20120430-1959</m:dependency.management__org.eclipse.equinox.p2.artifact__repository__version>
+		<m:dependency.management__org.eclipse.equinox.p2__console__version>1.0.300.v20120429-0125</m:dependency.management__org.eclipse.equinox.p2__console__version>
+		<m:dependency.management__org.eclipse.equinox.p2__core__version>2.2.0.v20120430-0525</m:dependency.management__org.eclipse.equinox.p2__core__version>
+		<m:dependency.management__org.eclipse.equinox.p2__director__version>2.2.0.v20120524-0542</m:dependency.management__org.eclipse.equinox.p2__director__version>
+		<m:dependency.management__org.eclipse.equinox.p2.director__app__version>1.0.300.v20120428-0517</m:dependency.management__org.eclipse.equinox.p2.director__app__version>
+		<m:dependency.management__org.eclipse.equinox.p2__directorywatcher__version>1.0.300.v20110808-1657</m:dependency.management__org.eclipse.equinox.p2__directorywatcher__version>
+		<m:dependency.management__org.eclipse.equinox.p2__engine__version>2.2.0.v20120501-1502</m:dependency.management__org.eclipse.equinox.p2__engine__version>
+		<m:dependency.management__org.eclipse.equinox.p2__extensionlocation__version>1.2.100.v20110808-1657</m:dependency.management__org.eclipse.equinox.p2__extensionlocation__version>
+		<m:dependency.management__org.eclipse.equinox.p2__garbagecollector__version>1.0.200.v20110808-1657</m:dependency.management__org.eclipse.equinox.p2__garbagecollector__version>
+		<m:dependency.management__org.eclipse.equinox.p2__jarprocessor__version>1.0.200.v20110808-1657</m:dependency.management__org.eclipse.equinox.p2__jarprocessor__version>
+		<m:dependency.management__org.eclipse.equinox.p2__metadata__version>2.1.0.v20120430-2001</m:dependency.management__org.eclipse.equinox.p2__metadata__version>
+		<m:dependency.management__org.eclipse.equinox.p2.metadata__repository__version>1.2.100.v20120524-1717</m:dependency.management__org.eclipse.equinox.p2.metadata__repository__version>
+		<m:dependency.management__org.eclipse.equinox.p2__operations__version>2.2.0.v20120524-0542</m:dependency.management__org.eclipse.equinox.p2__operations__version>
+		<m:dependency.management__org.eclipse.equinox.p2__publisher__version>1.2.0.v20120428-0117</m:dependency.management__org.eclipse.equinox.p2__publisher__version>
+		<m:dependency.management__org.eclipse.equinox.p2__ql__version>2.0.100.v20110808-1657</m:dependency.management__org.eclipse.equinox.p2__ql__version>
+		<m:dependency.management__org.eclipse.equinox.p2.reconciler__dropins__version>1.1.200.v20120301-2145</m:dependency.management__org.eclipse.equinox.p2.reconciler__dropins__version>
+		<m:dependency.management__org.eclipse.equinox.p2__repository__version>2.2.0.v20120524-1945</m:dependency.management__org.eclipse.equinox.p2__repository__version>
+		<m:dependency.management__org.eclipse.equinox.p2.repository__tools__version>2.0.100.v20120501-1314</m:dependency.management__org.eclipse.equinox.p2.repository__tools__version>
+		<m:dependency.management__org.eclipse.equinox.p2.touchpoint__eclipse__version>2.1.100.v20120428-0117</m:dependency.management__org.eclipse.equinox.p2.touchpoint__eclipse__version>
+		<m:dependency.management__org.eclipse.equinox.p2.touchpoint__natives__version>1.1.0.v20120524-0542</m:dependency.management__org.eclipse.equinox.p2.touchpoint__natives__version>
+		<m:dependency.management__org.eclipse.equinox.p2__ui__version>2.2.0.v20120524-0542</m:dependency.management__org.eclipse.equinox.p2__ui__version>
+		<m:dependency.management__org.eclipse.equinox.p2.ui__sdk__version>1.0.200.v20120515-1650</m:dependency.management__org.eclipse.equinox.p2.ui__sdk__version>
+		<m:dependency.management__org.eclipse.equinox.p2.ui.sdk__scheduler__version>1.1.0.v20110815-1744</m:dependency.management__org.eclipse.equinox.p2.ui.sdk__scheduler__version>
+		<m:dependency.management__org.eclipse.equinox.p2__updatechecker__version>1.1.200.v20110808-1657</m:dependency.management__org.eclipse.equinox.p2__updatechecker__version>
+		<m:dependency.management__org.eclipse.equinox.p2__updatesite__version>1.0.400.v20120412-1615</m:dependency.management__org.eclipse.equinox.p2__updatesite__version>
+		<m:dependency.management__org.eclipse.equinox__preferences__version>3.5.0.v20120522-1841</m:dependency.management__org.eclipse.equinox__preferences__version>
+		<m:dependency.management__org.eclipse.equinox__registry__version>3.5.200.v20120522-1841</m:dependency.management__org.eclipse.equinox__registry__version>
+		<m:dependency.management__org.eclipse.equinox__security__version>1.1.100.v20120522-1841</m:dependency.management__org.eclipse.equinox__security__version>
+		<m:dependency.management__org.eclipse.equinox__simpleconfigurator__version>1.0.301.v20120828-033635</m:dependency.management__org.eclipse.equinox__simpleconfigurator__version>
+		<m:dependency.management__org.eclipse.equinox.simpleconfigurator__manipulator__version>2.0.0.v20110808-1657</m:dependency.management__org.eclipse.equinox.simpleconfigurator__manipulator__version>
+		<m:dependency.management__org.eclipse__help__version>3.6.0.v20120521-2344</m:dependency.management__org.eclipse__help__version>
+		<m:dependency.management__org.eclipse.help__appserver__version>3.1.400.v20120521-2344</m:dependency.management__org.eclipse.help__appserver__version>
+		<m:dependency.management__org.eclipse.help__base__version>3.6.100.v201209141540</m:dependency.management__org.eclipse.help__base__version>
+		<m:dependency.management__org.eclipse.help__ui__version>3.5.200.v20120521-2344</m:dependency.management__org.eclipse.help__ui__version>
+		<m:dependency.management__org.eclipse.help__webapp__version>3.6.101.v20120717-130216</m:dependency.management__org.eclipse.help__webapp__version>
+		<m:dependency.management__org.eclipse.jdt__core__version>3.8.2.v20120814-155456</m:dependency.management__org.eclipse.jdt__core__version>
+		<m:dependency.management__org.eclipse.jdt.core__manipulation__version>1.5.0.v20120523-1543</m:dependency.management__org.eclipse.jdt.core__manipulation__version>
+		<m:dependency.management__org.eclipse.jdt__debug__version>3.7.101.v20120725-115645</m:dependency.management__org.eclipse.jdt__debug__version>
+		<m:dependency.management__org.eclipse.jdt.debug__ui__version>3.6.100.v20120530-1425-studio</m:dependency.management__org.eclipse.jdt.debug__ui__version>
+		<m:dependency.management__org.eclipse.jdt__launching__version>3.6.100.v20120523-1953</m:dependency.management__org.eclipse.jdt__launching__version>
+		<m:dependency.management__org.eclipse.jdt.launching__macosx__version>3.2.100.v20120523-1953</m:dependency.management__org.eclipse.jdt.launching__macosx__version>
+		<m:dependency.management__org.eclipse.jdt__ui__version>3.8.1.v20120814-144251-studio</m:dependency.management__org.eclipse.jdt__ui__version>
+		<m:dependency.management__org.eclipse.jetty__continuation__version>8.1.3.v20120522</m:dependency.management__org.eclipse.jetty__continuation__version>
+		<m:dependency.management__org.eclipse.jetty__http__version>8.1.3.v20120522</m:dependency.management__org.eclipse.jetty__http__version>
+		<m:dependency.management__org.eclipse.jetty__io__version>8.1.3.v20120522</m:dependency.management__org.eclipse.jetty__io__version>
+		<m:dependency.management__org.eclipse.jetty__security__version>8.1.3.v20120522</m:dependency.management__org.eclipse.jetty__security__version>
+		<m:dependency.management__org.eclipse.jetty__server__version>8.1.3.v20120522</m:dependency.management__org.eclipse.jetty__server__version>
+		<m:dependency.management__org.eclipse.jetty__servlet__version>8.1.3.v20120522</m:dependency.management__org.eclipse.jetty__servlet__version>
+		<m:dependency.management__org.eclipse.jetty__util__version>8.1.3.v20120522</m:dependency.management__org.eclipse.jetty__util__version>
+		<m:dependency.management__org.eclipse__jface__version>3.8.0.v20120521-2332</m:dependency.management__org.eclipse__jface__version>
+		<m:dependency.management__org.eclipse.jface__databinding__version>1.6.0.v20120521-2332</m:dependency.management__org.eclipse.jface__databinding__version>
+		<m:dependency.management__org.eclipse.jface__text__version>3.8.1.v20120828-155502</m:dependency.management__org.eclipse.jface__text__version>
+		<m:dependency.management__org.eclipse.ltk.core__refactoring__version>3.6.0.v20120523-1543</m:dependency.management__org.eclipse.ltk.core__refactoring__version>
+		<m:dependency.management__org.eclipse.ltk.ui__refactoring__version>3.7.0.v20120523-1543</m:dependency.management__org.eclipse.ltk.ui__refactoring__version>
+		<m:dependency.management__org.eclipse__osgi__version>3.8.1.v20120830-144521</m:dependency.management__org.eclipse__osgi__version>
+		<m:dependency.management__org.eclipse.osgi__services__version>3.3.100.v20120522-1822</m:dependency.management__org.eclipse.osgi__services__version>
+		<m:dependency.management__org.eclipse.osgi__util__version>3.2.300.v20120522-1822</m:dependency.management__org.eclipse.osgi__util__version>
+		<m:dependency.management__org.eclipse__rcp__version>3.8.0.v201209141540</m:dependency.management__org.eclipse__rcp__version>
+		<m:dependency.management__org.eclipse__search__version>3.8.0.v20120523-1540-studio</m:dependency.management__org.eclipse__search__version>
+		<m:dependency.management__org.eclipse__swt__version>3.8.1.v3834e</m:dependency.management__org.eclipse__swt__version>
+		<m:dependency.management__org.eclipse.swt.cocoa__macosx__version>3.8.1.v3834e</m:dependency.management__org.eclipse.swt.cocoa__macosx__version>
+		<m:dependency.management__org.eclipse.swt.cocoa.macosx__x86_64__version>3.8.1.v3834e</m:dependency.management__org.eclipse.swt.cocoa.macosx__x86_64__version>
+		<m:dependency.management__org.eclipse.swt.gtk.linux__x86__version>3.8.1.v3834e</m:dependency.management__org.eclipse.swt.gtk.linux__x86__version>
+		<m:dependency.management__org.eclipse.swt.gtk.linux__x86_64__version>3.8.1.v3834e</m:dependency.management__org.eclipse.swt.gtk.linux__x86_64__version>
+		<m:dependency.management__org.eclipse.swt.win32.win32__x86__version>3.8.1.v3834e</m:dependency.management__org.eclipse.swt.win32.win32__x86__version>
+		<m:dependency.management__org.eclipse.swt.win32.win32__x86_64__version>3.8.1.v3834e</m:dependency.management__org.eclipse.swt.win32.win32__x86_64__version>
+		<m:dependency.management__org.eclipse.team__core__version>3.6.100.v20120524-0627</m:dependency.management__org.eclipse.team__core__version>
+		<m:dependency.management__org.eclipse.team__ui__version>3.6.200.v20120522-1148-studio</m:dependency.management__org.eclipse.team__ui__version>
+		<m:dependency.management__org.eclipse__text__version>3.5.200.v20120523-1310</m:dependency.management__org.eclipse__text__version>
+		<m:dependency.management__org.eclipse__ui__version>3.8.0.v20120523-1546</m:dependency.management__org.eclipse__ui__version>
+		<m:dependency.management__org.eclipse.ui__cocoa__version>1.1.1.v20120523-1956</m:dependency.management__org.eclipse.ui__cocoa__version>
+		<m:dependency.management__org.eclipse.ui__console__version>3.5.100.v20120521-2012</m:dependency.management__org.eclipse.ui__console__version>
+		<m:dependency.management__org.eclipse.ui__editors__version>3.8.0.v20120523-1540-studio</m:dependency.management__org.eclipse.ui__editors__version>
+		<m:dependency.management__org.eclipse.ui__forms__version>3.5.200.v20120521-2332</m:dependency.management__org.eclipse.ui__forms__version>
+		<m:dependency.management__org.eclipse.ui__ide__version>3.8.1.v20120829-085332-studio</m:dependency.management__org.eclipse.ui__ide__version>
+		<m:dependency.management__org.eclipse.ui.ide__application__version>1.0.400.v20120523-1956-studio</m:dependency.management__org.eclipse.ui.ide__application__version>
+		<m:dependency.management__org.eclipse.ui__intro__version>3.4.200.v20120521-2344</m:dependency.management__org.eclipse.ui__intro__version>
+		<m:dependency.management__org.eclipse.ui__navigator__version>3.5.200.v20120523-1956</m:dependency.management__org.eclipse.ui__navigator__version>
+		<m:dependency.management__org.eclipse.ui.navigator__resources__version>3.4.400.v20120523-1956-studio</m:dependency.management__org.eclipse.ui.navigator__resources__version>
+		<m:dependency.management__org.eclipse.ui__net__version>1.2.101.v20120801-152207</m:dependency.management__org.eclipse.ui__net__version>
+		<m:dependency.management__org.eclipse.ui__views__version>3.6.100.v20120521-2332-studio</m:dependency.management__org.eclipse.ui__views__version>
+		<m:dependency.management__org.eclipse.ui.views.properties__tabbed__version>3.5.300.v20120523-1956</m:dependency.management__org.eclipse.ui.views.properties__tabbed__version>
+		<m:dependency.management__org.eclipse.ui__win32__version>3.2.300.v20120523-1956</m:dependency.management__org.eclipse.ui__win32__version>
+		<m:dependency.management__org.eclipse.ui__workbench__version>3.8.1.v20120816-082703</m:dependency.management__org.eclipse.ui__workbench__version>
+		<m:dependency.management__org.eclipse.ui.workbench__compatibility__version>3.2.101.v20120523-1956</m:dependency.management__org.eclipse.ui.workbench__compatibility__version>
+		<m:dependency.management__org.eclipse.ui.workbench__texteditor__version>3.8.0.v20120523-1310</m:dependency.management__org.eclipse.ui.workbench__texteditor__version>
+		<m:dependency.management__org.eclipse.update__configurator__version>3.3.200.v20120523-1742</m:dependency.management__org.eclipse.update__configurator__version>
+		<m:dependency.management__org.eclipse.update__core__version>3.2.600.v20120530-120908</m:dependency.management__org.eclipse.update__core__version>
+		<m:dependency.management__org.eclipse.update__scheduler__version>3.2.400.v20120530-120908</m:dependency.management__org.eclipse.update__scheduler__version>
+		<m:dependency.management__org.eclipse.update__ui__version>3.3.0.v20120523-1742</m:dependency.management__org.eclipse.update__ui__version>
+		<m:dependency.management__org.eclipse.languagepack__BabelLanguagePack-eclipse-de__version>3.7.0.v20120721081147</m:dependency.management__org.eclipse.languagepack__BabelLanguagePack-eclipse-de__version>
+		<m:dependency.management__org.eclipse.languagepack__BabelLanguagePack-eclipse-fr__version>3.7.0.v20120721081147</m:dependency.management__org.eclipse.languagepack__BabelLanguagePack-eclipse-fr__version>
+		<m:dependency.management__org.eclipse.swtbot.eclipse__core__version>2.0.0.433-dev-e35</m:dependency.management__org.eclipse.swtbot.eclipse__core__version>
+		<m:dependency.management__org.eclipse.swtbot.eclipse__finder__version>2.0.0.433-dev-e35</m:dependency.management__org.eclipse.swtbot.eclipse__finder__version>
+		<m:dependency.management__org.eclipse.swtbot.swt__finder__version>2.0.0.433-dev-e35</m:dependency.management__org.eclipse.swtbot.swt__finder__version>
+		<m:dependency.management__org.hamcrest__hamcrest-all__version>1.1</m:dependency.management__org.hamcrest__hamcrest-all__version>
+		<m:dependency.management__docbook__docbook-xml__version>4.5</m:dependency.management__docbook__docbook-xml__version>
+		<m:dependency.management__docbook__docbook-xsl__version>1.71.1</m:dependency.management__docbook__docbook-xsl__version>
+		<m:dependency.management__org.apache.directory.api__api-asn1-api__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-asn1-api__version>
+		<m:dependency.management__org.apache.directory.api__api-asn1-ber__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-asn1-ber__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-client-api__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-client-api__version>
+		<m:dependency.management__org.apache.directory.api__api-dsml-parser__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-dsml-parser__version>
+		<m:dependency.management__org.apache.directory.api__api-i18n__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-i18n__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-codec-core__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-codec-core__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-codec-standalone__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-codec-standalone__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-extras-aci__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-extras-aci__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-extras-trigger__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-extras-trigger__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-extras-util__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-extras-util__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-model__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-model__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-schema-data__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-schema-data__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-net-mina__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-net-mina__version>
+		<m:dependency.management__org.apache.directory.api__api-ldap-schema-converter__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-ldap-schema-converter__version>
+		<m:dependency.management__org.apache.directory.api__api-util__version>1.0.0-M15</m:dependency.management__org.apache.directory.api__api-util__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-core__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-core__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-core-api__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-core-api__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-core-avl__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-core-avl__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-core-constants__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-core-constants__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-i18n__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-i18n__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-ldif-partition__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-ldif-partition__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-server-config__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-server-config__version>
+		<m:dependency.management__org.apache.directory.server__apacheds-xdbm-partition__version>2.0.0-M10</m:dependency.management__org.apache.directory.server__apacheds-xdbm-partition__version>
+		<m:dependency.management__bouncycastle__bcprov-jdk15__version>140</m:dependency.management__bouncycastle__bcprov-jdk15__version>
+		<m:dependency.management__org.apache.xmlgraphics__fop__version>1.0</m:dependency.management__org.apache.xmlgraphics__fop__version>
+		<m:dependency.management__org.apache.mina__mina-core__version>2.0.7</m:dependency.management__org.apache.mina__mina-core__version>
+		<m:dependency.management__xerces__xercesImpl__version>2.10.0</m:dependency.management__xerces__xercesImpl__version>
+		<m:dependency.management__checkstyle__checkstyle__version>4.1</m:dependency.management__checkstyle__checkstyle__version>
+		<m:dependency.management__antlr__antlr__version>2.7.7</m:dependency.management__antlr__antlr__version>
+		<m:dependency.management__dom4j__dom4j__version>1.6.1</m:dependency.management__dom4j__dom4j__version>
+		<m:dependency.management__commons-codec__commons-codec__version>1.6</m:dependency.management__commons-codec__commons-codec__version>
+		<m:dependency.management__commons-collections__commons-collections__version>3.2.1</m:dependency.management__commons-collections__commons-collections__version>
+		<m:dependency.management__commons-io__commons-io__version>2.4</m:dependency.management__commons-io__commons-io__version>
+		<m:dependency.management__commons-lang__commons-lang__version>2.6</m:dependency.management__commons-lang__commons-lang__version>
+		<m:dependency.management__commons-logging__commons-logging__version>1.1.1</m:dependency.management__commons-logging__commons-logging__version>
+		<m:dependency.management__commons-pool__commons-pool__version>1.6</m:dependency.management__commons-pool__commons-pool__version>
+		<m:dependency.management__org.apache.httpcomponents__httpclient__version>4.1.2</m:dependency.management__org.apache.httpcomponents__httpclient__version>
+		<m:dependency.management__org.apache.httpcomponents__httpcore__version>4.1.2</m:dependency.management__org.apache.httpcomponents__httpcore__version>
+		<m:dependency.management__xpp3__xpp3__version>1.1.4c</m:dependency.management__xpp3__xpp3__version>
+		<m:dependency.management__junit__junit__version>4.10</m:dependency.management__junit__junit__version>
+		<m:dependency.management__org.apache.poi__poi__version>3.7</m:dependency.management__org.apache.poi__poi__version>
+		<m:dependency.management__org.openoffice__odfdom__version>0.6.16</m:dependency.management__org.openoffice__odfdom__version>
+		<m:dependency.management__net.sf.ehcache__ehcache-core__version>2.4.4</m:dependency.management__net.sf.ehcache__ehcache-core__version>
+		<m:dependency.management__org.slf4j__slf4j-api__version>1.7.1</m:dependency.management__org.slf4j__slf4j-api__version>
+		<m:dependency.management__org.slf4j__slf4j-log4j12__version>1.7.1</m:dependency.management__org.slf4j__slf4j-log4j12__version>
+		<m:dependency.management__log4j__log4j__version>1.2.17</m:dependency.management__log4j__log4j__version>
+		<m:dependency.management__findbugs__annotations__version>1.0.0</m:dependency.management__findbugs__annotations__version>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+	</publications>
+	<dependencies>
+		<dependency org="findbugs" name="annotations" rev="1.0.0" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<override org="org.apache.directory.studio" module="schemaeditor.help" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.jsp.jasper" module="registry" matcher="exact" rev="1.0.300.v20120522-2049"/>
+		<override org="org.apache.directory.studio.launcher.macosx" module="x86" matcher="exact" rev="2.0.v20121026"/>
+		<override org="org.eclipse.team" module="core" matcher="exact" rev="3.6.100.v20120524-0627"/>
+		<override org="org.eclipse.core.net.linux" module="x86_64" matcher="exact" rev="1.1.0.v20120522-1148"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.core.constants" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.apache.maven.plugins" module="maven-dependency-plugin" matcher="exact" rev="2.4"/>
+		<override org="org.hamcrest" module="hamcrest-all" matcher="exact" rev="1.1"/>
+		<override org="org.apache.directory.studio" module="org.xpp3.xpp3" matcher="exact" rev="1.1.4.c"/>
+		<override org="org.apache.poi" module="poi" matcher="exact" rev="3.7"/>
+		<override org="org.apache.directory.server" module="apacheds-xdbm-partition" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.eclipse.ui" module="intro" matcher="exact" rev="3.4.200.v20120521-2344"/>
+		<override org="org.apache.commons" module="logging" matcher="exact" rev="1.0.4.v201101211617"/>
+		<override org="org.eclipse.core" module="boot" matcher="exact" rev="3.1.300.v20120523-2004"/>
+		<override org="org.eclipse.ui" module="forms" matcher="exact" rev="3.5.200.v20120521-2332"/>
+		<override org="org.eclipse.ui" module="win32" matcher="exact" rev="3.2.300.v20120523-1956"/>
+		<override org="org.eclipse.jface" module="text" matcher="exact" rev="3.8.1.v20120828-155502"/>
+		<override org="org.apache.directory.studio" module="common.core" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.p2" module="core" matcher="exact" rev="2.2.0.v20120430-0525"/>
+		<override org="org.eclipse.equinox" module="simpleconfigurator" matcher="exact" rev="1.0.301.v20120828-033635"/>
+		<override org="org.eclipse.core.runtime" module="compatibility" matcher="exact" rev="3.2.200.v20120521-2346"/>
+		<override org="org.eclipse.help" module="appserver" matcher="exact" rev="3.1.400.v20120521-2344"/>
+		<override org="org.eclipse" module="swt" matcher="exact" rev="3.8.1.v3834e"/>
+		<override org="org.apache.directory.studio" module="ldapbrowser.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse" module="ui" matcher="exact" rev="3.8.0.v20120523-1546"/>
+		<override org="javax" module="servlet" matcher="exact" rev="3.0.0.v201112011016"/>
+		<override org="org.eclipse.core.filesystem.linux" module="x86_64" matcher="exact" rev="1.2.0.v20120522-1137"/>
+		<override org="org.eclipse.equinox.launcher.cocoa" module="macosx" matcher="exact" rev="1.1.200.v20120522-1813"/>
+		<override org="org.eclipse.ui" module="console" matcher="exact" rev="3.5.100.v20120521-2012"/>
+		<override org="org.apache.directory.studio" module="ldifeditor" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.compare" module="core" matcher="exact" rev="3.5.200.v20120522-1148"/>
+		<override org="org.eclipse.equinox" module="security" matcher="exact" rev="1.1.100.v20120522-1841"/>
+		<override org="commons-lang" module="commons-lang" matcher="exact" rev="2.6"/>
+		<override org="org.apache.directory.api" module="api-asn1-ber" matcher="exact" rev="1.0.0-M15"/>
+		<override org="log4j" module="log4j" matcher="exact" rev="1.2.17"/>
+		<override org="org.eclipse.jetty" module="security" matcher="exact" rev="8.1.3.v20120522"/>
+		<override org="org.eclipse.equinox.jsp" module="jasper" matcher="exact" rev="1.0.400.v20120522-2049"/>
+		<override org="org.apache.directory.studio" module="apacheds.help" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.simpleconfigurator" module="manipulator" matcher="exact" rev="2.0.0.v20110808-1657"/>
+		<override org="org.apache.directory.server" module="apacheds-core" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.apache" module="lucene" matcher="exact" rev="2.9.1.v201101211721"/>
+		<override org="org.eclipse.swt.gtk.linux" module="x86_64" matcher="exact" rev="3.8.1.v3834e"/>
+		<override org="org.eclipse.core.net.win32" module="x86_64" matcher="exact" rev="1.0.100.v20120522-1148"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.core.api" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.apache.directory.studio" module="ldifeditor.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.ui" module="ide" matcher="exact" rev="3.8.1.v20120829-085332-studio"/>
+		<override org="org.eclipse.equinox" module="preferences" matcher="exact" rev="3.5.0.v20120522-1841"/>
+		<override org="commons-pool" module="commons-pool" matcher="exact" rev="1.6"/>
+		<override org="org.eclipse.debug" module="core" matcher="exact" rev="3.7.100.v20120521-2012"/>
+		<override org="org.eclipse.equinox.launcher.cocoa.macosx" module="x86_64" matcher="exact" rev="1.1.200.v20120522-1813"/>
+		<override org="org.eclipse.equinox.p2" module="jarprocessor" matcher="exact" rev="1.0.200.v20110808-1657"/>
+		<override org="org.apache.directory.studio" module="schemaeditor.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.launcher.win32.win32" module="x86" matcher="exact" rev="1.1.200.v20120522-1813"/>
+		<override org="org.eclipse.equinox.p2" module="engine" matcher="exact" rev="2.2.0.v20120501-1502"/>
+		<override org="org.eclipse.equinox.p2.touchpoint" module="eclipse" matcher="exact" rev="2.1.100.v20120428-0117"/>
+		<override org="org.apache.directory.api" module="api-ldap-client-api" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.apache.httpcomponents" module="httpclient" matcher="exact" rev="4.1.2"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.core" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.apache.directory.studio" module="org.apache.commons.pool" matcher="exact" rev="1.6"/>
+		<override org="org.eclipse.equinox.p2" module="repository" matcher="exact" rev="2.2.0.v20120524-1945"/>
+		<override org="org.slf4j" module="slf4j-api" matcher="exact" rev="1.7.1"/>
+		<override org="org.eclipse.core" module="contenttype" matcher="exact" rev="3.4.200.v20120523-2004"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.ldif.partition" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.apache.directory.studio" module="apacheds-launcher" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.core" module="resources" matcher="exact" rev="3.8.1.v20120802-154922"/>
+		<override org="org.eclipse.ui" module="workbench" matcher="exact" rev="3.8.1.v20120816-082703"/>
+		<override org="org.apache.directory.studio" module="updatesite" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.swt.cocoa.macosx" module="x86_64" matcher="exact" rev="3.8.1.v3834e"/>
+		<override org="org.eclipse.core" module="filesystem" matcher="exact" rev="1.3.200.v20120522-2012"/>
+		<override org="org.apache.directory.api" module="api-ldap-codec-standalone" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.eclipse.equinox.p2" module="updatechecker" matcher="exact" rev="1.1.200.v20110808-1657"/>
+		<override org="antlr" module="antlr" matcher="exact" rev="2.7.7"/>
+		<override org="org.eclipse.equinox.p2.repository" module="tools" matcher="exact" rev="2.0.100.v20120501-1314"/>
+		<override org="org.eclipse.equinox.p2.touchpoint" module="natives" matcher="exact" rev="1.1.0.v20120524-0542"/>
+		<override org="org.eclipse.swt.cocoa" module="macosx" matcher="exact" rev="3.8.1.v3834e"/>
+		<override org="org.apache.directory.studio" module="ldapservers.apacheds.v156" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="ldapservers.apacheds.v157" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="net.sf.ehcache" module="ehcache-core" matcher="exact" rev="2.4.4"/>
+		<override org="org.eclipse.equinox.p2" module="director" matcher="exact" rev="2.2.0.v20120524-0542"/>
+		<override org="org.eclipse" module="text" matcher="exact" rev="3.5.200.v20120523-1310"/>
+		<override org="org.apache.maven" module="maven-project" matcher="exact" rev="3.0-alpha-2"/>
+		<override org="org.apache.directory.studio" module="rcp.fullscreen" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="ldapservers.apacheds.v153" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.update" module="configurator" matcher="exact" rev="3.3.200.v20120523-1742"/>
+		<override org="org.apache.directory.studio" module="ldapservers.apacheds.v154" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="ldapservers.apacheds.v155" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="docbook" module="docbook-xsl" matcher="exact" rev="1.71.1"/>
+		<override org="javax" module="el" matcher="exact" rev="2.2.0.v201108011116"/>
+		<override org="org.apache.directory.studio" module="connection.core" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.core.filesystem" module="macosx" matcher="exact" rev="1.3.0.v20120522-1137"/>
+		<override org="org.eclipse.equinox.p2.metadata" module="repository" matcher="exact" rev="1.2.100.v20120524-1717"/>
+		<override org="org.eclipse.jdt" module="core" matcher="exact" rev="3.8.2.v20120814-155456"/>
+		<override org="org.eclipse.jetty" module="http" matcher="exact" rev="8.1.3.v20120522"/>
+		<override org="org.eclipse.jface" module="databinding" matcher="exact" rev="1.6.0.v20120521-2332"/>
+		<override org="org.apache.jasper" module="glassfish" matcher="exact" rev="2.2.2.v201205150955"/>
+		<override org="org.apache.directory.studio" module="test.integration.core" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.jetty" module="server" matcher="exact" rev="8.1.3.v20120522"/>
+		<override org="org.apache.directory.server" module="apacheds-server-config" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.eclipse.equinox.launcher.gtk.linux" module="x86_64" matcher="exact" rev="1.1.200.v20120522-1813"/>
+		<override org="org.eclipse.equinox.http" module="servlet" matcher="exact" rev="1.1.300.v20120522-1841"/>
+		<override org="org.eclipse.equinox.p2" module="metadata" matcher="exact" rev="2.1.0.v20120430-2001"/>
+		<override org="org.eclipse.jdt" module="debug" matcher="exact" rev="3.7.101.v20120725-115645"/>
+		<override org="org.apache.directory.studio" module="apacheds.configuration.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.ui" module="editors" matcher="exact" rev="3.8.0.v20120523-1540-studio"/>
+		<override org="org.apache.directory.studio" module="ldapservers.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.p2" module="ql" matcher="exact" rev="2.0.100.v20110808-1657"/>
+		<override org="org.eclipse.equinox.http" module="jetty" matcher="exact" rev="3.0.0.v20120522-1841"/>
+		<override org="org.eclipse" module="search" matcher="exact" rev="3.8.0.v20120523-1540-studio"/>
+		<override org="org.apache.directory.studio" module="org.slf4j.log4j12" matcher="exact" rev="1.7.1"/>
+		<override org="org.eclipse.jetty" module="io" matcher="exact" rev="8.1.3.v20120522"/>
+		<override org="org.apache.directory.studio" module="test.integration.ui" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="ldifeditor.help" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.p2" module="updatesite" matcher="exact" rev="1.0.400.v20120412-1615"/>
+		<override org="org.eclipse.jdt.launching" module="macosx" matcher="exact" rev="3.2.100.v20120523-1953"/>
+		<override org="org.apache.directory.studio.launcher.win32" module="x86_64" matcher="exact" rev="2.0"/>
+		<override org="org.apache.maven" module="maven-plugin-api" matcher="exact" rev="3.0.4"/>
+		<override org="org.eclipse.ltk.ui" module="refactoring" matcher="exact" rev="3.7.0.v20120523-1543"/>
+		<override org="org.eclipse.core" module="expressions" matcher="exact" rev="3.4.400.v20120523-2004"/>
+		<override org="org.eclipse.equinox.p2" module="garbagecollector" matcher="exact" rev="1.0.200.v20110808-1657"/>
+		<override org="org.eclipse.swt.gtk.linux" module="x86" matcher="exact" rev="3.8.1.v3834e"/>
+		<override org="org.apache.directory.api" module="api-ldap-schema-data" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.eclipse.swt.win32.win32" module="x86_64" matcher="exact" rev="3.8.1.v3834e"/>
+		<override org="org.eclipse.equinox.p2.reconciler" module="dropins" matcher="exact" rev="1.1.200.v20120301-2145"/>
+		<override org="org.eclipse" module="compare" matcher="exact" rev="3.5.300.v20120522-1148-studio"/>
+		<override org="org.eclipse.equinox.p2" module="console" matcher="exact" rev="1.0.300.v20120429-0125"/>
+		<override org="org.apache.httpcomponents" module="httpcore" matcher="exact" rev="4.1.2"/>
+		<override org="org.eclipse.ui.workbench" module="compatibility" matcher="exact" rev="3.2.101.v20120523-1956"/>
+		<override org="org.apache.directory.api" module="api-ldap-extras-util" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.eclipse" module="help" matcher="exact" rev="3.6.0.v20120521-2344"/>
+		<override org="org.apache.directory.studio" module="ldapbrowser.common" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="ldapbrowser.ui" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.p2" module="publisher" matcher="exact" rev="1.2.0.v20120428-0117"/>
+		<override org="dom4j" module="dom4j" matcher="exact" rev="1.6.1"/>
+		<override org="org.eclipse.ui.workbench" module="texteditor" matcher="exact" rev="3.8.0.v20120523-1310"/>
+		<override org="org.eclipse.equinox.p2" module="operations" matcher="exact" rev="2.2.0.v20120524-0542"/>
+		<override org="org.apache.directory.api" module="api-ldap-schema-converter" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.apache.directory.studio" module="org.apache.httpcomponents.httpcore" matcher="exact" rev="4.1.2"/>
+		<override org="org.eclipse.ui.views.properties" module="tabbed" matcher="exact" rev="3.5.300.v20120523-1956"/>
+		<override org="org.eclipse.update" module="ui" matcher="exact" rev="3.3.0.v20120523-1742"/>
+		<override org="org.apache.directory.studio.launcher.linux" module="x86" matcher="exact" rev="2.0"/>
+		<override org="org.eclipse.equinox" module="app" matcher="exact" rev="1.3.100.v20120522-1841"/>
+		<override org="org.eclipse.jetty" module="continuation" matcher="exact" rev="8.1.3.v20120522"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.core.avl" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.eclipse.core.net.win32" module="x86" matcher="exact" rev="1.0.100.v20120522-1148"/>
+		<override org="org.eclipse.ui" module="navigator" matcher="exact" rev="3.5.200.v20120523-1956"/>
+		<override org="org.eclipse.languagepack" module="BabelLanguagePack-eclipse-de" matcher="exact" rev="3.7.0.v20120721081147"/>
+		<override org="org.apache.directory.studio" module="rcp.help" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.maven" module="maven-artifact" matcher="exact" rev="3.0.4"/>
+		<override org="org.apache.directory.studio" module="org.bouncycastle.bcprov.jdk15" matcher="exact" rev="140"/>
+		<override org="org.apache.directory.studio" module="org.dom4j.dom4j" matcher="exact" rev="1.6.1"/>
+		<override org="org.apache.directory.studio" module="rcp" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.help" module="ui" matcher="exact" rev="3.5.200.v20120521-2344"/>
+		<override org="org.apache.directory.studio" module="org.apache.logging.log4j" matcher="exact" rev="1.2.17"/>
+		<override org="org.eclipse.core.resources.win32" module="x86" matcher="exact" rev="3.5.100.v20120522-1137"/>
+		<override org="org.eclipse.core.runtime.compatibility" module="auth" matcher="exact" rev="3.2.300.v20120523-2004"/>
+		<override org="org.eclipse.equinox" module="launcher" matcher="exact" rev="1.3.0.v20120522-1813"/>
+		<override org="org.eclipse.core.runtime.compatibility" module="registry" matcher="exact" rev="3.5.100.v20120521-2346"/>
+		<override org="org.eclipse.debug" module="ui" matcher="exact" rev="3.8.1.v20120718-192144-studio"/>
+		<override org="org.eclipse.help" module="base" matcher="exact" rev="3.6.100.v201209141540"/>
+		<override org="org.eclipse.jetty" module="util" matcher="exact" rev="8.1.3.v20120522"/>
+		<override org="com.ibm" module="icu" matcher="exact" rev="4.4.2.v20110823"/>
+		<override org="org.eclipse.core" module="net" matcher="exact" rev="1.2.200.v20120522-1148"/>
+		<override org="org.eclipse" module="ecf" matcher="exact" rev="3.1.300.v20120610-1946"/>
+		<override org="org.apache.directory.api" module="api-dsml-parser" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.apache.directory.studio" module="connection.ui" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.team" module="ui" matcher="exact" rev="3.6.200.v20120522-1148-studio"/>
+		<override org="org.apache.directory.studio" module="ldapbrowser.core" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="net.sf.ehcache.core" matcher="exact" rev="2.4.4"/>
+		<override org="org.apache.directory.studio" module="apacheds.configuration.v2.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.core" module="databinding" matcher="exact" rev="1.4.1.v20120521-2332"/>
+		<override org="org.apache.lucene" module="core" matcher="exact" rev="2.9.1.v201101211721"/>
+		<override org="com.bandlem.eclipse.fullscreen" module="feature" matcher="exact" rev="1.0.4.201108061054"/>
+		<override org="javax.servlet" module="jsp" matcher="exact" rev="2.2.0.v201112011158"/>
+		<override org="org.eclipse.core" module="filebuffers" matcher="exact" rev="3.5.200.v20120523-1310"/>
+		<override org="org.eclipse.equinox.http" module="registry" matcher="exact" rev="1.1.200.v20120522-2049"/>
+		<override org="org.eclipse.ui" module="net" matcher="exact" rev="1.2.101.v20120801-152207"/>
+		<override org="org.eclipse.swtbot.swt" module="finder" matcher="exact" rev="2.0.0.433-dev-e35"/>
+		<override org="org.apache.directory.studio" module="rcp.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio.launcher.macosx" module="x86_64" matcher="exact" rev="2.0.v20121026"/>
+		<override org="commons-codec" module="commons-codec" matcher="exact" rev="1.6"/>
+		<override org="org.apache.directory.studio" module="ldapbrowser.help" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.ecf" module="filetransfer" matcher="exact" rev="5.0.0.v20120610-1946"/>
+		<override org="org.apache.directory.server" module="apacheds-core-avl" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.apache.directory.api" module="api-ldap-codec-core" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.eclipse.core.databinding" module="property" matcher="exact" rev="1.4.100.v20120523-1956"/>
+		<override org="org.eclipse.core.net.linux" module="x86" matcher="exact" rev="1.1.200.v20120522-1148"/>
+		<override org="docbook" module="docbook-xml" matcher="exact" rev="4.5"/>
+		<override org="findbugs" module="annotations" matcher="exact" rev="1.0.0"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1.1"/>
+		<override org="org.eclipse" module="jface" matcher="exact" rev="3.8.0.v20120521-2332"/>
+		<override org="org.apache.directory.studio" module="org.slf4j.api" matcher="exact" rev="1.7.1"/>
+		<override org="checkstyle" module="checkstyle" matcher="exact" rev="4.1"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.xdbm.partition" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.openoffice" module="odfdom" matcher="exact" rev="0.6.16"/>
+		<override org="org.eclipse.osgi" module="services" matcher="exact" rev="3.3.100.v20120522-1822"/>
+		<override org="org.eclipse.equinox.p2" module="ui" matcher="exact" rev="2.2.0.v20120524-0542"/>
+		<override org="org.eclipse" module="osgi" matcher="exact" rev="3.8.1.v20120830-144521"/>
+		<override org="org.eclipse.jetty" module="servlet" matcher="exact" rev="8.1.3.v20120522"/>
+		<override org="org.apache.directory.api" module="api-ldap-net-mina" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.apache.maven" module="maven-model" matcher="exact" rev="3.0.4"/>
+		<override org="org.apache.directory.studio" module="apacheds.configuration" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.api" module="api-ldap-model" matcher="exact" rev="1.0.0-M15"/>
+		<override org="commons-collections" module="commons-collections" matcher="exact" rev="3.2.1"/>
+		<override org="org.apache.directory.studio.launcher.win32" module="x86" matcher="exact" rev="2.0"/>
+		<override org="org.eclipse.equinox.p2" module="extensionlocation" matcher="exact" rev="1.2.100.v20110808-1657"/>
+		<override org="org.apache.directory.api" module="api-ldap-extras-trigger" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.apache.directory.studio" module="common.ui" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.api" module="api-ldap-extras-aci" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.apache.directory.studio" module="ldapservers" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.launcher.gtk.linux" module="x86" matcher="exact" rev="1.1.200.v20120522-1813"/>
+		<override org="org.eclipse.core.filesystem.win32" module="x86" matcher="exact" rev="1.1.300.v20120522-1137"/>
+		<override org="org.eclipse.equinox.p2.ui" module="sdk" matcher="exact" rev="1.0.200.v20120515-1650"/>
+		<override org="org.apache.directory.studio" module="org.antlr.antlr" matcher="exact" rev="2.7.7"/>
+		<override org="org.eclipse.jdt.debug" module="ui" matcher="exact" rev="3.6.100.v20120530-1425-studio"/>
+		<override org="org.apache.directory.studio" module="org.apache.commons.codec" matcher="exact" rev="1.6"/>
+		<override org="org.apache.directory.studio" module="org.apache.commons.collections" matcher="exact" rev="3.2.1"/>
+		<override org="bouncycastle" module="bcprov-jdk15" matcher="exact" rev="140"/>
+		<override org="org.apache.directory.studio" module="aciitemeditor" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.server" module="apacheds-core-api" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.apache.lucene" module="analysis" matcher="exact" rev="2.9.1.v201101211721"/>
+		<override org="org.eclipse.jdt.core" module="manipulation" matcher="exact" rev="1.5.0.v20120523-1543"/>
+		<override org="com.bandlem.eclipse.fullscreen" module="ui" matcher="exact" rev="1.0.4.201108061054"/>
+		<override org="org.eclipse.ui.navigator" module="resources" matcher="exact" rev="3.4.400.v20120523-1956-studio"/>
+		<override org="org.eclipse.update" module="scheduler" matcher="exact" rev="3.2.400.v20120530-120908"/>
+		<override org="org.eclipse.swtbot.eclipse" module="core" matcher="exact" rev="2.0.0.433-dev-e35"/>
+		<override org="org.eclipse.core.filesystem.win32" module="x86_64" matcher="exact" rev="1.1.300.v20120522-1137"/>
+		<override org="org.eclipse.ui" module="cocoa" matcher="exact" rev="1.1.1.v20120523-1956"/>
+		<override org="org.eclipse.ltk.core" module="refactoring" matcher="exact" rev="3.6.0.v20120523-1543"/>
+		<override org="org.apache.directory.studio" module="org.apache.httpcomponents.httpclient" matcher="exact" rev="4.1.2"/>
+		<override org="org.apache.mina" module="mina-core" matcher="exact" rev="2.0.7"/>
+		<override org="org.eclipse.jdt" module="launching" matcher="exact" rev="3.6.100.v20120523-1953"/>
+		<override org="org.apache.directory.studio.launcher.linux" module="x86_64" matcher="exact" rev="2.0"/>
+		<override org="org.apache.directory.studio" module="ldapservers.apacheds.v200" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.config" matcher="exact" rev="2.0.0-M10"/>
+		<override org="xpp3" module="xpp3" matcher="exact" rev="1.1.4c"/>
+		<override org="org.apache.directory.studio" module="apacheds.configuration.v2" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.p2.ui.sdk" module="scheduler" matcher="exact" rev="1.1.0.v20110815-1744"/>
+		<override org="org.apache.directory.studio" module="org.apache.commons.lang" matcher="exact" rev="2.6"/>
+		<override org="org.eclipse.ecf" module="identity" matcher="exact" rev="3.1.200.v20120610-1946"/>
+		<override org="org.apache.directory.api" module="api-asn1-api" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.eclipse.core" module="runtime" matcher="exact" rev="3.8.0.v20120521-2346"/>
+		<override org="org.eclipse.update" module="core" matcher="exact" rev="3.2.600.v20120530-120908"/>
+		<override org="org.eclipse.swt.win32.win32" module="x86" matcher="exact" rev="3.8.1.v3834e"/>
+		<override org="org.apache.directory.studio" module="valueeditors" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.server" module="apacheds-i18n" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.eclipse.ui" module="views" matcher="exact" rev="3.6.100.v20120521-2332-studio"/>
+		<override org="org.apache.directory.studio" module="schemaeditor" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="org.apache.directory.server.i18n" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.eclipse.core.databinding" module="observable" matcher="exact" rev="1.4.1.v20120521-2332"/>
+		<override org="org.apache.xmlgraphics" module="fop" matcher="exact" rev="1.0"/>
+		<override org="org.apache.directory.studio" module="org.apache.mina.core" matcher="exact" rev="2.0.7"/>
+		<override org="org.slf4j" module="slf4j-log4j12" matcher="exact" rev="1.7.1"/>
+		<override org="junit" module="junit" matcher="exact" rev="4.10"/>
+		<override org="xerces" module="xercesImpl" matcher="exact" rev="2.10.0"/>
+		<override org="org.apache.directory.studio" module="apacheds.feature" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.equinox.p2.artifact" module="repository" matcher="exact" rev="1.1.200.v20120430-1959"/>
+		<override org="org.apache.directory.studio" module="apacheds" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.eclipse.languagepack" module="BabelLanguagePack-eclipse-fr" matcher="exact" rev="3.7.0.v20120721081147"/>
+		<override org="org.apache.directory.server" module="apacheds-core-constants" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.eclipse.core" module="commands" matcher="exact" rev="3.6.1.v20120521-2332"/>
+		<override org="org.eclipse.equinox.p2" module="directorywatcher" matcher="exact" rev="1.0.300.v20110808-1657"/>
+		<override org="org.apache.directory.server" module="apacheds-ldif-partition" matcher="exact" rev="2.0.0-M10"/>
+		<override org="org.eclipse.swtbot.eclipse" module="finder" matcher="exact" rev="2.0.0.433-dev-e35"/>
+		<override org="org.apache.directory.studio" module="org.apache.commons.io" matcher="exact" rev="2.4"/>
+		<override org="org.eclipse.jdt" module="ui" matcher="exact" rev="3.8.1.v20120814-144251-studio"/>
+		<override org="org.eclipse.core.filesystem.linux" module="x86" matcher="exact" rev="1.4.0.v20120522-1137"/>
+		<override org="org.eclipse.equinox" module="common" matcher="exact" rev="3.6.100.v20120522-1841"/>
+		<override org="org.eclipse.help" module="webapp" matcher="exact" rev="3.6.101.v20120717-130216"/>
+		<override org="org.apache.directory.studio" module="org.apache.commons.logging" matcher="exact" rev="1.1.1"/>
+		<override org="org.eclipse.ecf.provider" module="filetransfer" matcher="exact" rev="3.2.0.v20120610-1946"/>
+		<override org="org.eclipse" module="rcp" matcher="exact" rev="3.8.0.v201209141540"/>
+		<override org="org.eclipse.core" module="variables" matcher="exact" rev="3.2.600.v20120521-2012"/>
+		<override org="org.eclipse.core" module="jobs" matcher="exact" rev="3.5.200.v20120521-2346"/>
+		<override org="org.apache.directory.api" module="api-util" matcher="exact" rev="1.0.0-M15"/>
+		<override org="commons-io" module="commons-io" matcher="exact" rev="2.4"/>
+		<override org="org.apache.directory.api" module="api-i18n" matcher="exact" rev="1.0.0-M15"/>
+		<override org="org.eclipse.equinox" module="registry" matcher="exact" rev="3.5.200.v20120522-1841"/>
+		<override org="org.eclipse.osgi" module="util" matcher="exact" rev="3.2.300.v20120522-1822"/>
+		<override org="org.eclipse.equinox.p2.director" module="app" matcher="exact" rev="1.0.300.v20120428-0517"/>
+		<override org="org.eclipse.ui.ide" module="application" matcher="exact" rev="1.0.400.v20120523-1956-studio"/>
+		<override org="org.eclipse.equinox.launcher.win32.win32" module="x86_64" matcher="exact" rev="1.1.200.v20120522-1813"/>
+		<override org="org.apache.directory.studio" module="apacheds.configuration.help" matcher="exact" rev="2.0.0.v20130125"/>
+		<override org="org.apache.directory.studio" module="ldifparser" matcher="exact" rev="2.0.0.v20130125"/>
+	</dependencies>
+</ivy-module>

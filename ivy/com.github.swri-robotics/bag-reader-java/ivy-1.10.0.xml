@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="com.github.swri-robotics"
+		module="bag-reader-java"
+		revision="1.10.0"
+		status="release"
+		publication="20180503124619"
+	>
+		<description homepage="https://github.com/swri-robotics/bag-reader-java" />
+		<m:properties__java-version>1.7</m:properties__java-version>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:properties__maven.compiler.target>1.6</m:properties__maven.compiler.target>
+		<m:properties__maven.build.timestamp.format>yyyy-MM-dd HH:mm</m:properties__maven.build.timestamp.format>
+		<m:properties__maven.compiler.source>1.6</m:properties__maven.compiler.source>
+		<m:properties__project.reporting.outputEncoding>UTF-8</m:properties__project.reporting.outputEncoding>
+		<m:dependency.management__com.jcabi__jcabi-aether__version>0.10.1</m:dependency.management__com.jcabi__jcabi-aether__version>
+		<m:dependency.management__com.jcabi__jcabi-aspects__version>0.22.5</m:dependency.management__com.jcabi__jcabi-aspects__version>
+		<m:dependency.management__com.jcabi__jcabi-dynamo__version>0.21.3</m:dependency.management__com.jcabi__jcabi-dynamo__version>
+		<m:dependency.management__com.jcabi__jcabi-email__version>1.8</m:dependency.management__com.jcabi__jcabi-email__version>
+		<m:dependency.management__com.jcabi__jcabi-github__version>0.28</m:dependency.management__com.jcabi__jcabi-github__version>
+		<m:dependency.management__com.jcabi__jcabi-http__version>1.16</m:dependency.management__com.jcabi__jcabi-http__version>
+		<m:dependency.management__com.jcabi__jcabi-immutable__version>1.4</m:dependency.management__com.jcabi__jcabi-immutable__version>
+		<m:dependency.management__com.jcabi__jcabi-jdbc__version>0.16</m:dependency.management__com.jcabi__jcabi-jdbc__version>
+		<m:dependency.management__com.jcabi__jcabi-log__version>0.17.2</m:dependency.management__com.jcabi__jcabi-log__version>
+		<m:dependency.management__com.jcabi__jcabi-manifests__version>1.1</m:dependency.management__com.jcabi__jcabi-manifests__version>
+		<m:dependency.management__com.jcabi__jcabi-matchers__version>1.3</m:dependency.management__com.jcabi__jcabi-matchers__version>
+		<m:dependency.management__com.jcabi__jcabi-maven-slf4j__version>0.9</m:dependency.management__com.jcabi__jcabi-maven-slf4j__version>
+		<m:dependency.management__com.jcabi__jcabi-odesk__version>0.12</m:dependency.management__com.jcabi__jcabi-odesk__version>
+		<m:dependency.management__com.jcabi__jcabi-s3__version>0.11.5</m:dependency.management__com.jcabi__jcabi-s3__version>
+		<m:dependency.management__com.jcabi__jcabi-simpledb__version>0.3</m:dependency.management__com.jcabi__jcabi-simpledb__version>
+		<m:dependency.management__com.jcabi__jcabi-ssh__version>1.5.2</m:dependency.management__com.jcabi__jcabi-ssh__version>
+		<m:dependency.management__com.jcabi__jcabi-urn__version>0.9</m:dependency.management__com.jcabi__jcabi-urn__version>
+		<m:dependency.management__com.jcabi__jcabi-velocity__version>0.9</m:dependency.management__com.jcabi__jcabi-velocity__version>
+		<m:dependency.management__com.jcabi__jcabi-w3c__version>1.2</m:dependency.management__com.jcabi__jcabi-w3c__version>
+		<m:dependency.management__com.jcabi__jcabi-xml__version>0.17.2</m:dependency.management__com.jcabi__jcabi-xml__version>
+		<m:dependency.management__javax.json__javax.json-api__version>1.0</m:dependency.management__javax.json__javax.json-api__version>
+		<m:dependency.management__javax.json__javax.json-api__scope>provided</m:dependency.management__javax.json__javax.json-api__scope>
+		<m:dependency.management__org.glassfish__javax.json__version>1.0.4</m:dependency.management__org.glassfish__javax.json__version>
+		<m:dependency.management__org.glassfish__javax.json__scope>runtime</m:dependency.management__org.glassfish__javax.json__scope>
+		<m:dependency.management__javax.ws.rs__jsr311-api__version>1.1.1</m:dependency.management__javax.ws.rs__jsr311-api__version>
+		<m:dependency.management__javax.ws.rs__jsr311-api__scope>provided</m:dependency.management__javax.ws.rs__jsr311-api__scope>
+		<m:dependency.management__javax.xml.bind__jaxb-api__version>2.2.12</m:dependency.management__javax.xml.bind__jaxb-api__version>
+		<m:dependency.management__javax.xml.bind__jaxb-api__exclusion_0>javax.xml.bind__jsr173_api</m:dependency.management__javax.xml.bind__jaxb-api__exclusion_0>
+		<m:dependency.management__com.google.guava__guava__version>20.0</m:dependency.management__com.google.guava__guava__version>
+		<m:dependency.management__org.apache.commons__commons-lang3__version>3.5</m:dependency.management__org.apache.commons__commons-lang3__version>
+		<m:dependency.management__org.apache.commons__commons-math3__version>3.6.1</m:dependency.management__org.apache.commons__commons-math3__version>
+		<m:dependency.management__commons-codec__commons-codec__version>1.10</m:dependency.management__commons-codec__commons-codec__version>
+		<m:dependency.management__commons-net__commons-net__version>3.5</m:dependency.management__commons-net__commons-net__version>
+		<m:dependency.management__commons-io__commons-io__version>2.5</m:dependency.management__commons-io__commons-io__version>
+		<m:dependency.management__commons-collections__commons-collections__version>3.2.2</m:dependency.management__commons-collections__commons-collections__version>
+		<m:dependency.management__org.aspectj__aspectjrt__version>1.8.9</m:dependency.management__org.aspectj__aspectjrt__version>
+		<m:dependency.management__javax.validation__validation-api__version>1.1.0.Final</m:dependency.management__javax.validation__validation-api__version>
+		<m:dependency.management__org.hibernate__hibernate-validator__version>5.3.2.Final</m:dependency.management__org.hibernate__hibernate-validator__version>
+		<m:dependency.management__javax.el__javax.el-api__version>3.0.1-b04</m:dependency.management__javax.el__javax.el-api__version>
+		<m:dependency.management__org.clojure__clojure__version>1.9.0-alpha14</m:dependency.management__org.clojure__clojure__version>
+		<m:dependency.management__org.clojure__clojure-contrib__version>1.2.0</m:dependency.management__org.clojure__clojure-contrib__version>
+		<m:dependency.management__org.clojure__tools.logging__version>0.3.1</m:dependency.management__org.clojure__tools.logging__version>
+		<m:dependency.management__javax.servlet__javax.servlet-api__version>4.0.0-b01</m:dependency.management__javax.servlet__javax.servlet-api__version>
+		<m:dependency.management__javax.servlet__javax.servlet-api__scope>provided</m:dependency.management__javax.servlet__javax.servlet-api__scope>
+		<m:dependency.management__org.projectlombok__lombok__version>1.16.10</m:dependency.management__org.projectlombok__lombok__version>
+		<m:dependency.management__org.projectlombok__lombok__scope>provided</m:dependency.management__org.projectlombok__lombok__scope>
+		<m:dependency.management__xml-apis__xml-apis__version>1.4.01</m:dependency.management__xml-apis__xml-apis__version>
+		<m:dependency.management__junit__junit__version>4.12</m:dependency.management__junit__junit__version>
+		<m:dependency.management__junit__junit__exclusion_0>org.hamcrest__hamcrest-core</m:dependency.management__junit__junit__exclusion_0>
+		<m:dependency.management__org.hamcrest__hamcrest-core__version>1.3</m:dependency.management__org.hamcrest__hamcrest-core__version>
+		<m:dependency.management__org.hamcrest__hamcrest-library__version>1.3</m:dependency.management__org.hamcrest__hamcrest-library__version>
+		<m:dependency.management__org.mockito__mockito-core__version>2.2.21</m:dependency.management__org.mockito__mockito-core__version>
+		<m:dependency.management__org.mockito__mockito-core__exclusion_0>org.hamcrest__hamcrest-core</m:dependency.management__org.mockito__mockito-core__exclusion_0>
+		<m:dependency.management__org.slf4j__slf4j-log4j12__version>1.7.21</m:dependency.management__org.slf4j__slf4j-log4j12__version>
+		<m:dependency.management__log4j__log4j__version>1.2.17</m:dependency.management__log4j__log4j__version>
+		<m:dependency.management__org.antlr__antlr-runtime__version>3.5.2</m:dependency.management__org.antlr__antlr-runtime__version>
+		<m:dependency.management__org.antlr__antlr4-runtime__version>4.5.3</m:dependency.management__org.antlr__antlr4-runtime__version>
+		<m:dependency.management__org.codehaus.groovy__groovy-all__version>2.4.7</m:dependency.management__org.codehaus.groovy__groovy-all__version>
+		<m:maven.plugins>org.apache.maven.plugins__maven-enforcer-plugin__1.4.1|org.codehaus.mojo__buildnumber-maven-plugin__1.4|org.apache.maven.plugins__maven-enforcer-plugin__1.4.1|org.codehaus.mojo__buildnumber-maven-plugin__1.4|org.apache.maven.plugins__maven-compiler-plugin__3.5.1|org.apache.maven.plugins__maven-source-plugin__2.2.1|org.apache.maven.plugins__maven-javadoc-plugin__2.9.1|org.apache.maven.plugins__maven-gpg-plugin__1.5|org.sonatype.plugins__nexus-staging-maven-plugin__1.6.7</m:maven.plugins>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+		<artifact name="bag-reader-java" type="jar" ext="jar" conf="master"/>
+		<artifact name="bag-reader-java" type="source" ext="jar" conf="sources" m:classifier="sources"/>
+		<artifact name="bag-reader-java" type="javadoc" ext="jar" conf="javadoc" m:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="junit" name="junit" rev="4.12" force="true" conf="test->runtime(*),master(*)">
+			<exclude org="org.hamcrest" module="hamcrest-core" name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.google.guava" name="guava" rev="18.0" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.16" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="commons-codec" name="commons-codec" rev="1.10" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.6.5" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="org.apache.commons" name="commons-compress" rev="1.10" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="1.1.5" force="true" conf="runtime->compile(*),runtime(*),master(*)"/>
+		<dependency org="com.github.swri-robotics" name="lz4" rev="1.5.0" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<override org="org.antlr" module="antlr4-runtime" matcher="exact" rev="4.5.3"/>
+		<override org="com.google.guava" module="guava" matcher="exact" rev="20.0"/>
+		<override org="com.jcabi" module="jcabi-http" matcher="exact" rev="1.16"/>
+		<override org="javax.ws.rs" module="jsr311-api" matcher="exact" rev="1.1.1"/>
+		<override org="com.jcabi" module="jcabi-jdbc" matcher="exact" rev="0.16"/>
+		<override org="org.glassfish" module="javax.json" matcher="exact" rev="1.0.4"/>
+		<override org="xml-apis" module="xml-apis" matcher="exact" rev="1.4.01"/>
+		<override org="com.jcabi" module="jcabi-ssh" matcher="exact" rev="1.5.2"/>
+		<override org="log4j" module="log4j" matcher="exact" rev="1.2.17"/>
+		<override org="com.jcabi" module="jcabi-dynamo" matcher="exact" rev="0.21.3"/>
+		<override org="org.projectlombok" module="lombok" matcher="exact" rev="1.16.10"/>
+		<override org="com.jcabi" module="jcabi-urn" matcher="exact" rev="0.9"/>
+		<override org="com.jcabi" module="jcabi-odesk" matcher="exact" rev="0.12"/>
+		<override org="com.jcabi" module="jcabi-github" matcher="exact" rev="0.28"/>
+		<override org="javax.xml.bind" module="jaxb-api" matcher="exact" rev="2.2.12"/>
+		<override org="com.jcabi" module="jcabi-s3" matcher="exact" rev="0.11.5"/>
+		<override org="org.hibernate" module="hibernate-validator" matcher="exact" rev="5.3.2.Final"/>
+		<override org="commons-codec" module="commons-codec" matcher="exact" rev="1.10"/>
+		<override org="org.hamcrest" module="hamcrest-core" matcher="exact" rev="1.3"/>
+		<override org="com.jcabi" module="jcabi-aether" matcher="exact" rev="0.10.1"/>
+		<override org="javax.validation" module="validation-api" matcher="exact" rev="1.1.0.Final"/>
+		<override org="javax.servlet" module="javax.servlet-api" matcher="exact" rev="4.0.0-b01"/>
+		<override org="com.jcabi" module="jcabi-velocity" matcher="exact" rev="0.9"/>
+		<override org="org.apache.commons" module="commons-lang3" matcher="exact" rev="3.5"/>
+		<override org="org.slf4j" module="slf4j-log4j12" matcher="exact" rev="1.7.21"/>
+		<override org="com.jcabi" module="jcabi-immutable" matcher="exact" rev="1.4"/>
+		<override org="com.jcabi" module="jcabi-email" matcher="exact" rev="1.8"/>
+		<override org="junit" module="junit" matcher="exact" rev="4.12"/>
+		<override org="org.clojure" module="tools.logging" matcher="exact" rev="0.3.1"/>
+		<override org="com.jcabi" module="jcabi-aspects" matcher="exact" rev="0.22.5"/>
+		<override org="com.jcabi" module="jcabi-simpledb" matcher="exact" rev="0.3"/>
+		<override org="com.jcabi" module="jcabi-xml" matcher="exact" rev="0.17.2"/>
+		<override org="org.mockito" module="mockito-core" matcher="exact" rev="2.2.21"/>
+		<override org="org.antlr" module="antlr-runtime" matcher="exact" rev="3.5.2"/>
+		<override org="org.hamcrest" module="hamcrest-library" matcher="exact" rev="1.3"/>
+		<override org="org.codehaus.groovy" module="groovy-all" matcher="exact" rev="2.4.7"/>
+		<override org="javax.el" module="javax.el-api" matcher="exact" rev="3.0.1-b04"/>
+		<override org="com.jcabi" module="jcabi-log" matcher="exact" rev="0.17.2"/>
+		<override org="com.jcabi" module="jcabi-w3c" matcher="exact" rev="1.2"/>
+		<override org="commons-collections" module="commons-collections" matcher="exact" rev="3.2.2"/>
+		<override org="org.aspectj" module="aspectjrt" matcher="exact" rev="1.8.9"/>
+		<override org="com.jcabi" module="jcabi-maven-slf4j" matcher="exact" rev="0.9"/>
+		<override org="org.apache.commons" module="commons-math3" matcher="exact" rev="3.6.1"/>
+		<override org="javax.json" module="javax.json-api" matcher="exact" rev="1.0"/>
+		<override org="commons-io" module="commons-io" matcher="exact" rev="2.5"/>
+		<override org="com.jcabi" module="jcabi-matchers" matcher="exact" rev="1.3"/>
+		<override org="commons-net" module="commons-net" matcher="exact" rev="3.5"/>
+		<override org="org.clojure" module="clojure-contrib" matcher="exact" rev="1.2.0"/>
+		<override org="org.clojure" module="clojure" matcher="exact" rev="1.9.0-alpha14"/>
+		<override org="com.jcabi" module="jcabi-manifests" matcher="exact" rev="1.1"/>
+	</dependencies>
+</ivy-module>

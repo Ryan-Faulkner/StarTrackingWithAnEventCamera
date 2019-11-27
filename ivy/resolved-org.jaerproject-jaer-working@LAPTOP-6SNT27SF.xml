@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+The Ivy package maanger used for getting some packages (jars) used in jAER.
+
+See https://blog.alejandrocelaya.com/2014/02/22/dependency-management-in-java-projects-with-ant-and-ivy/
+http://search.maven.org/
+
+Copyright (C) 2018 Tobi.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+MA 02110-1301  USA
+-->
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+    <info organisation="org.jaerproject" module="jaer" revision="working@LAPTOP-6SNT27SF" status="integration" publication="20190417003326"/>
+
+    <dependencies>
+        <!--see https://jogamp.org/wiki/index.php/Maven-->
+        <!--see http://search.maven.org to find libraries -->
+        <!--following does not work, since the latest jogl doesn't have com.jogamp.opengl--> 
+        <!--https://repo1.maven.org/maven2/org/jogamp/gluegen/gluegen-rt/2.3.2/-->
+        <dependency org="org.jogamp.gluegen" name="gluegen-rt" rev="2.3.2"/>
+        <dependency org="org.jogamp.gluegen" name="gluegen-rt-main" rev="2.3.2"/>
+        <dependency org="org.jogamp.gluegen" name="gluegen-rt" rev="2.3.2">
+            <!--include main jar-->
+            <artifact name="gluegen-rt" type="jar" ext="jar"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-linux-amd64"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-linux-i586"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-macosx-universal"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-solaris-amd64"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-solaris-i586"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-windows-amd64"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-windows-i586"/>
+            <artifact name="gluegen-rt" type="jar" ext="jar" m:classifier="natives-windows-amd64"/>
+        </dependency>
+        <!--https://repo1.maven.org/maven2/org/jogamp/jogl/jogl-all/2.3.2/-->
+        <!--<dependency org="org.jogamp.jogl" name="jogl-all" rev="2.3.2" />--> 
+        <dependency org="org.jogamp.jogl" name="jogl-all-main" rev="2.3.2"/> 
+        <!--<dependency org="org.jogamp.jogl" name="nativewindow" rev="2.3.2" />-->
+        <!--<dependency org="org.jogamp.jogl" name="newt" rev="2.3.2" />-->
+        <!--<dependency org="org.jogamp.jogl" name="jogl-all-main" rev="2.3.2" />--> 
+        <dependency org="org.jogamp.jogl" name="jogl-all" rev="2.3.2"> 
+            <!--include main jar-->
+            <artifact name="jogl-all" type="jar" ext="jar"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-linux-amd64"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-linux-i586"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-macosx-universal"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-solaris-amd64"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-solaris-i586"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-windows-amd64"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-windows-i586"/>
+            <artifact name="jogl-all" type="jar" ext="jar" m:classifier="natives-windows-amd64"/>
+        </dependency>
+ 
+        
+        <dependency org="org.swinglabs" name="swing-layout" rev="1.0.3"/>
+        <dependency org="org.jdesktop" name="beansbinding" rev="1.2.1"/>
+        
+        <!--bag-reader-java-1.9.0 is here to obtain all of its dependencies, but we are using the fork at https://github.com/tobidelbruck/bag-reader-java currently-->
+        <!--since our fixes were pulled, we can now use bag-reader-java 1.10.x-->
+        <dependency org="com.github.swri-robotics" name="bag-reader-java" rev="1.10.0"/>
+        <dependency org="org.apache.commons" name="commons-lang3" rev="3.7"/>
+        <dependency org="org.apache.commons" name="commons-math3" rev="3.6.1"/>
+        <dependency org="org.webjars.npm" name="semver" rev="5.4.1"/>
+        <dependency org="commons-net" name="commons-net" rev="3.6"/>
+        <dependency org="org.apache.directory.studio" name="org.apache.commons.io" rev="2.4"/>
+        <dependency org="com.google.code.gson" name="gson" rev="2.8.2"/>
+        
+        <dependency org="javax.mail" name="javax.mail-api" rev="1.6.0"/>
+        
+        <!--jblas is a matrix library for Java which uses existing high performance BLAS and LAPACK libraries like ATLAS -->
+        <dependency org="org.jblas" name="jblas" rev="1.2.4"/>
+        
+        <dependency org="org.scala-saddle" name="jhdf5" rev="2.9"/>
+        <dependency org="org.bytedeco.javacpp-presets" name="hdf5" rev="1.10.1-1.4">
+            <artifact name="hdf5" type="jar" ext="jar" m:classifier="macosx-x86_64"/>
+            <artifact name="hdf5" type="jar" ext="jar" m:classifier="windows-x86_64"/>
+            <artifact name="hdf5" type="jar" ext="jar" m:classifier="windows-x86"/>
+            <artifact name="hdf5" type="jar" ext="jar" m:classifier="linux-x86_64"/>
+            <artifact name="hdf5" type="jar" ext="jar" m:classifier="linux-x86"/>
+        </dependency>
+
+        <dependency org="net.java.linoleum" name="jlfgr" rev="1_0"/>
+        <dependency org="com.neuronrobotics" name="nrjavaserial" rev="3.13.0"/>
+        <dependency org="com.kitfox.svg" name="svg-salamander" rev="1.0"/>
+        <dependency org="org.uncommons.maths" name="uncommons-maths" rev="1.2.2a"/>
+        <!--<dependency org="io.github.andreas-solti.matrix-toolkits-java" name="mtj" rev="1.0.7" />-->
+        <dependency org="org.tallison" name="jmatio" rev="1.2"/>
+        <!--<dependency org="com.github.fommil.netlib" name="all" rev="1.1.2" />-->
+        <!--        <dependency org="com.github.fommil.netlib" name="native_system-java" rev="1.1" />
+        <dependency org="com.github.fommil.netlib" name="core" rev="1.1.2" />-->
+        <dependency org="org.usb4java" name="usb4java" rev="1.2.0"/>
+        <dependency org="com.google.guava" name="guava" rev="18.0"/>
+        <!--libusb4java needs following to work around bug in maven that incorrectly constucts the ivy dependency - see https://github.com/sbt/sbt/issues/285 -->
+        <dependency org="org.usb4java" name="libusb4java" rev="1.2.0">
+            <artifact name="libusb4java" type="jar" ext="jar" m:classifier="osx-x86_64"/>
+            <artifact name="libusb4java" type="jar" ext="jar" m:classifier="osx-x86"/>
+            <artifact name="libusb4java" type="jar" ext="jar" m:classifier="windows-x86_64"/>
+            <artifact name="libusb4java" type="jar" ext="jar" m:classifier="windows-x86"/>
+            <artifact name="libusb4java" type="jar" ext="jar" m:classifier="linux-arm"/>
+            <artifact name="libusb4java" type="jar" ext="jar" m:classifier="linux-x86_64"/>
+            <artifact name="libusb4java" type="jar" ext="jar" m:classifier="linux-x86"/>
+        </dependency>
+        <!--TODO sort out opencv and javacv - seems to be multiple versions used in jaer-->
+        <dependency org="org.bytedeco.javacpp-presets" name="opencv" rev="3.2.0-1.3">
+            <artifact name="opencv" type="jar" ext="jar"/>
+            <artifact name="opencv" type="jar" ext="jar" m:classifier="macosx-x86_64"/>
+            <artifact name="opencv" type="jar" ext="jar" m:classifier="windows-x86_64"/>
+            <artifact name="opencv" type="jar" ext="jar" m:classifier="windows-x86"/>
+            <artifact name="opencv" type="jar" ext="jar" m:classifier="linux-x86_64"/>
+            <artifact name="opencv" type="jar" ext="jar" m:classifier="linux-x86"/>
+        </dependency>
+        <dependency org="org.openpnp" name="opencv" rev="3.2.0-1"/>
+        <!--<dependency org="org.openpnp" name="opencv" rev="2.4.13-0" />-->
+        <!--<dependency org="org.bytedeco.javacpp-presets" name="opencv" rev="3.4.0-1.4" />-->
+        <!--we use version 1.0 of javacv because the stereo matching opencv only has 3 arguments in existing code but later opencv has many more options-->
+        <dependency org="org.bytedeco" name="javacv" rev="1.0"/>
+        
+        <!--tensorflow has native libraries, but handled fine with this dependeny-->
+        <dependency org="org.tensorflow" name="tensorflow" rev="1.9.0"/>
+
+        <!--for reading yaml files that store the input format for tensorflow graphs, e.g. cnns-->
+        <dependency org="com.esotericsoftware.yamlbeans" name="yamlbeans" rev="1.13"/>
+
+        <!--mathematics, linear algebra and optimisation java library-->
+        <dependency org="org.ojalgo" name="ojalgo" rev="44.0.0"/>      
+        
+        <dependency org="org.jblas" name="jblas" rev="1.2.4"/>    
+        <!--used in telluride for communicating to foosball-->    
+        <dependency org="redis.clients" name="jedis" rev="2.9.0"/>
+  
+    </dependencies>
+</ivy-module>

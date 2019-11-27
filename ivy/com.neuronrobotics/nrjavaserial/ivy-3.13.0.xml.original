@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.neuronrobotics</groupId>
+  <artifactId>nrjavaserial</artifactId>
+  <version>3.13.0</version>
+  <name>NRJavaSerial</name>
+  <description>A fork of the RXTX library with a focus on ease of use and embeddability in other libraries.</description>
+  <url>http://neuronrobotics.com</url>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>madhephaestus</id>
+      <name>Kevin Harrington</name>
+      <email>kharrington@neuronrobotics.com</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:https://github.com/NeuronRobotics/nrjavaserial.git</connection>
+    <developerConnection>scm:git:git@github.com:NeuronRobotics/nrjavaserial.git</developerConnection>
+    <url>https://github.com/NeuronRobotics/nrjavaserial</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>commons-net</groupId>
+      <artifactId>commons-net</artifactId>
+      <version>3.3</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna</artifactId>
+      <version>4.2.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.java.dev.jna</groupId>
+      <artifactId>jna-platform</artifactId>
+      <version>4.2.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,47 @@
+Approach cell (kernel size: 91x91, 10x10 output cells):
+On-Kernel:
+-normal(sqrt(x^2+y^2),0,25) * 0.3
+Off-Kernel: 
+normal(sqrt(x^2+y^2),0,12.5)* 0.15
+
+
+Off brisk cells (kernel size: 7x7, 64x64 output cells):
+On-Kernel:
+-4.5*normal(sqrt(x^2+y^2),0,1.0) + 4.5/5.0 * normal(sqrt(x^2+y^2),0,2.0)
+Off-Kernel:
+1.0 * normal(sqrt(x^2+y^2),0,1.0) - 1/6.0 * normal(sqrt(x^2+y^2),0,2.0)
+
+
+On brisk cells (kernel size: 7x7, 64x64 output cells):
+On-Kernel:
+1.0 * normal(sqrt(x^2+y^2),0,1.0) - 1/6.0 * normal(sqrt(x^2+y^2),0,2.0)
+Off-Kernel:
+-4.5*normal(sqrt(x^2+y^2),0,1.0) + 4.5/5.0 * normal(sqrt(x^2+y^2),0,2.0)
+
+Gabor edge detector:
+x_theta=x*cos(theta)+y*sin(theta);
+y_theta=-x*sin(theta)+y*cos(theta);
+ 
+exp((- 0.5) * ( (x*cos(theta)+y*sin(theta))^2 / sigma_x^2 + (-x*sin(theta)+y*cos(theta))^2 / sigma_y^2)) * cos(2*PI / lambda * (x*cos(theta)+y*sin(theta)) + psi)
+
+theta = PI * 5/3
+sigma_x = 1.1
+sigma_y = 2.4
+psi = PI * 5 / 3
+lambda = 4.1
+exp((- 0.5) * ( (x*cos(PI * 5 / 3)+y*sin(PI * 5 / 3))^2 / 1.1^2 + (-x*sin(PI * 5 / 3)+y*cos(PI * 5 / 3))^2 / 2.4^2)) * cos(2*PI / 4.1 * (x*cos(PI * 5 / 3)+y*sin(PI * 5 / 3)) + PI *5/3)
+ 
+
+45 degree:
+exp(- 0.5 * ( (x + y)^2 / 8^2 / 2)  + (y - x)^2 / 8^2 / 2 ) * cos(2 * PI / 8 * (x*0.7071+y*0.7071) + PI/2) * 0.03
+
+//exp(- 0.5 * ( (x*0.7071 + y*0.7071)^2 / 2^2 + (-x*0.7071+y*0.7071)^2 / 1^2)) * cos(2 * PI / 2 * (x*0.7071+y*0.7071))
+
+
+90 degree:
+exp(- 0.5 * ( (y)^2 / 2^2 + (-x)^2 / 2^2)) * cos(2 * PI / 7 * (y) + PI / 2) * 0.07
+
+gauss:
+exp((-1)*( a * (x - x0)^2 + 2 * b * (x - x0)*(y - y0) + c * (y - y0)^2))
+a = cos^2(alpha) / (2 sigma_x^2) + sin^2(alpha) / (2 sigma_y^2)
+b = - sin(2 alpha) / (4 sigma_x^2) + cos^2(alpha) / (2 sigma_x^2) 	 	 	 	

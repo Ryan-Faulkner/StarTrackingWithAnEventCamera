@@ -1,0 +1,30 @@
+ToDo:
+
+1) Stackable maps:
+  a) each map gets a list of input kernels and a list of output kernels
+  b) expressionbasedkernel: only 1 activationmap
+  c) size updates: each map needs to inform input and output kernels about size changes
+  d) each map has property to add _input_kernel, also lists input kernels, not output kernels
+  e) modify kernels in order to support even-sized kernels and larger output maps than input maps
+  f) define 2 default input maps - on and off, main filter should simply cause spikes on these maps.
+  g) 
+
+
+
+1) Interface changes:
+- Cell Model must be
+  a) selectable (Integrate cell, IntegrateAndFire etc.)
+  b) editable (like threshold, time constant etc.)
+  
+- Kernel Editor:
+  a) improve output viewer
+  b) fuse output viewer and kernel editor
+  c) show formulas in output viewer, allow editing of instantiated kernels
+  
+  
+- allow Spatio-Temporal Filters:
+  a) Kernel Editor & viewer must allow 3D kernels
+  b) new Cell model required:
+     i)   current-based or voltage based (integrate charges or search for membrane potential peaks?)
+     ii)  at each spike, a "future profile" should be added to the future voltage or current trace of affected cells. 
+     iii) How to generate spikes? Future spikes can only be generated when the next spike arrives...   

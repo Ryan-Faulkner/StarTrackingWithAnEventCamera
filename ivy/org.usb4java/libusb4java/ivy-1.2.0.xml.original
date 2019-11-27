@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>org.usb4java</groupId>
+  <artifactId>libusb4java</artifactId>
+  <packaging>jar</packaging>
+  <name>libusb4java</name>
+  <version>1.2.0</version>
+  <url>http://usb4java.org/</url>
+  <description>
+    Native libraries for usb4java.
+  </description>
+  
+  <licenses>
+    <license>
+      <name>LGPL</name>
+      <url>LICENSE.md</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+    
+  <developers>
+    <developer>
+      <id>kayahr</id>
+      <name>Klaus Reimer</name>
+      <email>k@ailis.de</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+      <url>http://www.ailis.de/~k/</url>
+    </developer>        
+    <developer>
+      <id>llongi</id>
+      <name>Luca Longinotti</name>
+      <email>l@longi.li</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+      <url>http://l.longi.li/</url>
+    </developer>        
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/usb4java/${project.artifactId}.git</connection>
+    <url>http://github.com/usb4java/${project.artifactId}</url>
+  </scm>
+       
+</project>

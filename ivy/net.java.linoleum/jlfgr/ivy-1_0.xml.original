@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.java.linoleum</groupId>
+    <artifactId>jlfgr</artifactId>
+    <packaging>jar</packaging>
+    <description>Java Look and Feel Graphics Repository</description>
+    <version>1_0</version>
+    <licenses>
+        <license>
+            <name>LICENSE FOR SOFTWARE GRAPHICS ARTWORK</name>
+            <url>http://download.oracle.com/otn-pub/java/licenses/Software_Icon_License__943_2012.pdf</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <name>jlfgr</name>
+    <organization>
+        <name>net.java.linoleum</name>
+    </organization>
+    <url>http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-java-client-419417.html</url>
+    <scm>
+        <url>git@github.com:rjolly/linoleum.git</url>
+        <connection>scm:git:git@github.com:rjolly/linoleum.git</connection>
+    </scm>
+    <developers>
+        <developer>
+            <id>rjolly</id>
+            <name>Raphael Jolly</name>
+            <url>http://github.com/rjolly</url>
+        </developer>
+    </developers>
+</project>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.scala-saddle</groupId>
+    <artifactId>jhdf5</artifactId>
+    <packaging>jar</packaging>
+    <description>jhdf5</description>
+    <version>2.9</version>
+    <name>jhdf5</name>
+    <organization>
+        <name>org.scala-saddle</name>
+    </organization>
+    <url>http://www.hdfgroup.org/hdf-java-html/</url>
+    <licenses>
+        <license>
+            <name>BSD style</name>
+            <url>http://www.hdfgroup.org/products/licenses.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>git@github.com:saddle/jhdf5.git</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>HDF Group</id>
+            <name>HDF Group</name>
+            <url>http://www.hdfgroup.org/HDF5/</url>
+        </developer>
+    </developers>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+    </dependencies>
+</project>

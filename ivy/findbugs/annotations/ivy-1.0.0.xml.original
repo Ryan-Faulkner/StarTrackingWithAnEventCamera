@@ -1,0 +1,12 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>findbugs</groupId>
+  <artifactId>annotations</artifactId>
+  <version>1.0.0</version>
+  <url>http://findbugs.sf.net</url>
+  <description>Annotation supports the FindBugs tool</description>
+  <scm>
+    <connection>scm:cvs:pserver:anonymous@cvs.sourceforge.net:/cvsroot/findbugs/findbugs</connection>
+  </scm>
+
+</project>

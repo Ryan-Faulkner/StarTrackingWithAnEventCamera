@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="jAER" default="default" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+    <description>Builds, tests, and runs the project jAER</description>
+    <import file="nbproject/build-impl.xml"/>
+     <!--
+
+    There exist several targets which are by default empty and which can be
+    used for execution of your tasks. These targets are usually executed
+    before and after some main targets. They are:
+
+      -pre-init:                 called before initialization of project properties
+      -post-init:                called after initialization of project properties
+      -pre-compile:              called before javac compilation
+      -post-compile:             called after javac compilation
+      -pre-compile-single:       called before javac compilation of single file
+      -post-compile-single:      called after javac compilation of single file
+      -pre-compile-test:         called before javac compilation of JUnit tests
+      -post-compile-test:        called after javac compilation of JUnit tests
+      -pre-compile-test-single:  called before javac compilation of single JUnit test
+      -post-compile-test-single: called after javac compilation of single JUunit test
+      -pre-jar:                  called before JAR building
+      -post-jar:                 called after JAR building
+      -post-clean:               called after cleaning build products
+
+    (Targets beginning with '-' are not intended to be called on their own.)
+
+    Example of inserting an obfuscator after compilation could look like this:
+
+        <target name="-post-compile">
+            <obfuscate>
+                <fileset dir="${build.classes.dir}"/>
+            </obfuscate>
+        </target>
+
+    For list of available properties check the imported
+    nbproject/build-impl.xml file.
+
+
+    Another way to customize the build is by overriding existing main targets.
+    The targets of interest are:
+
+      -init-macrodef-javac:     defines macro for javac compilation
+      -init-macrodef-junit:     defines macro for junit execution
+      -init-macrodef-debug:     defines macro for class debugging
+      -init-macrodef-java:      defines macro for class execution
+      -do-jar-with-manifest:    JAR building (if you are using a manifest)
+      -do-jar-without-manifest: JAR building (if you are not using a manifest)
+      run:                      execution of project
+      -javadoc-build:           Javadoc generation
+      test-report:              JUnit report generation
+
+    An example of overriding the target for project execution could look like this:
+
+        <target name="run" depends="usb2aemon-impl.jar">
+            <exec dir="bin" executable="launcher.exe">
+                <arg file="${dist.jar}"/>
+            </exec>
+        </target>
+
+    Notice that the overridden target depends on the jar target and not only on
+    the compile target as the regular run target does. Again, for a list of available
+    properties which you can use, check the target you are overriding in the
+    nbproject/build-impl.xml file.
+
+    -->
+    <!-- override clean to not delete dist dir, because this messes up svn -->
+    <target name="-do-clean" depends="init,clean-ivy">
+        <delete dir="${build.dir}"/>
+    </target>
+
+
+<!--
+        https://blog.alejandrocelaya.com/2014/02/22/dependency-management-in-java-projects-with-ant-and-ivy/ 
+    https://ant.apache.org/ivy/ 
+    http://wiki.netbeans.org/FaqIvy 
+    see ivy.xml 
+    <target name="retrieve-dependencies"
+            description="Retrieve dependencies with Apache IVY">
+        <ivy:retrieve type="jar" />
+    </target>
+    
+    <path id="ivy.lib.path">
+        <fileset dir="jars" includes="ivy-2.4.0.jar"/>
+    </path>
+    <taskdef resource="org/apache/ivy/ant/antlib.xml"
+             uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    
+    <target name="-ivy-cleancache">
+        <ivy:cleancache />
+    </target>
+    
+    <target name="-ivy-retrieve">
+        <ivy:retrieve/>  Load dependencies to the project 
+        <pathconvert property="ivy.classpath.computed" dirsep="/" pathsep=":">
+            <path>
+                <fileset dir="lib" includes="*.jar"/>
+            </path>
+            <map from="${basedir}${file.separator}" to=""/>
+        </pathconvert>
+        <propertyfile file="nbproject/project.properties">
+            <entry operation="=" key="ivy.classpath" value="${ivy.classpath.computed}"/>
+        </propertyfile>
+    </target>-->
+    
+    
+    <!--    <target name="-pre-compile" depends="-ivy-retrieve"/>-->
+   
+    
+    
+    <!--    <target name="-post-clean">
+        <delete dir="lib"/>
+    </target>-->
+    
+    <!--ivy download and configure, from https://gist.github.com/snipsnipsnip/3284453 -->
+    <property name="ivy.install.version" value="2.4.0" />
+    <property name="ivy.jar.dir" value="${basedir}/ivy" />
+    <property name="ivy.cache.dir" value="${basedir}/ivy" />
+    <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar" />
+    <property name="ivy.lib" value="${basedir}/lib" />
+    <property name="ivy.settings.location" value="${basedir}/ivysettings.xml" />
+
+    <target name="-check-ivy">
+        <available file="${ivy.jar.file}" property="ivy.skip.download"/>
+    </target>
+
+    <target name="-download-ivy" unless="ivy.skip.download" depends="-check-ivy">
+        <mkdir dir="${ivy.jar.dir}"/>
+        <echo message="installing ivy..."/>
+        <get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar"
+             dest="${ivy.jar.file}" usetimestamp="true"/>
+    </target>
+
+    <target name="-load-ivy-tasks" depends="-download-ivy">
+        <path id="ivy.lib.path">
+            <pathelement location="${ivy.jar.file}"/>
+        </path>
+        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+    </target>
+
+    <target name="download-deps" depends="-load-ivy-tasks"
+            description="Download dependent libraries.">
+        <ivy:resolve/>
+        <ivy:retrieve/>
+
+        <pathconvert property="ivy.classpath.computed" dirsep="/" pathsep=":">
+            <path>
+                <fileset dir="${ivy.lib}" includes="*.jar"/>
+            </path>
+            <map from="${basedir}${file.separator}" to=""/>
+        </pathconvert>
+
+        <propertyfile file="${basedir}/nbproject/project.properties">
+            <entry operation="=" key="ivy.classpath" value="${ivy.classpath.computed}"/>
+        </propertyfile>
+    </target>
+
+    <target name="clean-deps" description="Clean downloaded libraries.">
+        <delete dir="${ivy.lib}"/>
+    </target>
+
+    <target name="clean-ivy" depends="clean-deps" description="Clean ivy.">
+        <!--<delete dir="${ivy.jar.dir}"/>-->
+        <!--<ivy:cleancache/>-->
+        <propertyfile file="${basedir}/nbproject/project.properties">
+            <entry operation="=" key="ivy.classpath" value=""/>
+        </propertyfile>
+    </target>
+
+    <target name="-use-ivy-junit" depends="download-deps" unless="netbeans.home">
+        <property name="libs.junit_4.classpath" value="${ivy.lib}/junit-4.10.jar"/>
+    </target>
+    
+    <target name="-pre-compile" depends="download-deps"/>
+
+    <target name="-pre-compile-single" depends="download-deps"/>
+
+    <target name="-pre-init" depends="-use-ivy-junit">
+        <tstamp/>
+    </target>
+
+    <!-- makes sure that the build version is written to the jar -->
+    <!-- 
+    <target name="-pre-jar" depends="jaer-setBuildVersion,jaer-copySplashImage" >
+        <echo message="build.xml project opened"/>
+        <echo> Having trouble building or running?
+            See the jAER user forum at https://groups.google.com/forum/#!forum/jaer-users
+        </echo>
+    </target>
+
+    <target name="checkos">
+        <condition property="isWindows" value="true">
+            <os family="windows" />
+        </condition>
+    </target>
+
+-->
+    <!--    copy splash image to src tree so that it gets into main jar
+    <target name="jaer-copySplashImage">
+        <copy file="images/SplashScreen.gif" todir="build/classes"/>
+    </target>-->
+
+    <!--    The exe4j launcher target to build jAERViewer.exe with integrated java 6 splash screen.
+            http://www.ej-technologies.com/products/exe4j/overview.html
+    -->
+    <!--
+    <target name="jaer-exe4j">
+        <echo message="Building Windows .exe. launchers using exe4j (https://www.ej-technologies.com/download/exe4j/files). ${line.separator} Note that depending on 32- or 64-bit installed JDKs, ${line.separator} you may not be able to build one or the other of these launchers. ${line.separator} Don't worry about this."/>
+        --><!--        <subant failonerror="false" target="jaer-exe4jx86">
+            <fileset dir="." includes="build.xml"/>
+        </subant>--><!--
+        <subant failonerror="false" target="jaer-exe4jx64">
+            <fileset dir="." includes="build.xml"/>
+        </subant>
+    </target>-->
+    
+    <!--    
+    Your license key for exe4j 4.x is:
+    L-TOBI_DELBRUCK#50022033010001-1evjjgm42c2fj#2311
+    -->
+    
+    <!--    <target name="jaer-exe4jx86" depends="checkos" if="isWindows" >
+        <echo message="Building jaer-exe4j jAERViewer.exe 32-bit Windows launcher for 32-bit Java Virtual Machines - embedding ico and setting SplashScreen in jAERViewer.exe. ${line.separator} Don't worry if this task fails for you unless you have changed the classpath. ${line.separator}jAERViewer.exe does not normally need to be rebuilt."/>
+        <taskdef name="jaer-exe4j" classname="com.jaer-exe4j.Exe4JTask" classpath="exe4j-launcher/exe4j_x86/bin/ant.jar" onerror="ignore" />
+        <exe4j projectfile="jaer1.5_win_jre_x86.exe4j" requirelicense="true"/>
+    </target>-->
+    <!--
+    <target name="jaer-exe4jx64" depends="checkos" if="isWindows">
+        <echo message="Building exe4j jAERViewer.exe 64-bit Windows launcher for 64-bit Java Virtual Machines - embedding icon and setting SplashScreen in jAERViewer.exe. ${line.separator} Don't worry if this task fails for you unless you have changed the classpath. ${line.separator}jAERViewer.exe does not normally need to be rebuilt."/>
+        <taskdef name="exe4j" classname="com.exe4j.Exe4JTask" classpath="exe4j-launcher/exe4j_x64/bin/ant.jar" onerror="report"/>
+        <exe4j projectfile="jaer_win_jre_x64.exe4j" requirelicense="true"/>
+    </target>
+    -->
+ 
+    
+    <!-- builds the windows executable .exe launcher files -->
+    <!--
+    <target name="-post-jar" depends="jaer-exe4j">
+        
+    </target>
+    -->
+
+    <!-- builds a zip of all the javadoc -->
+    <target name="jaer-archive-javadoc" depends="javadoc">
+        <tstamp/>
+        <delete file="../../jaer-javadoc-*.zip" />
+        <property name="javadocZipFileName" value="../../jaer-javadoc-${DSTAMP}.zip" />
+        <zip destfile="${javadocZipFileName}" comment="jAER javadoc ${DSTAMP} - see https://sourceforge.net/p/jaer/wiki/">
+            <zipfileset prefix="jAER-javadoc" dir="${dist.javadoc.dir}" />
+        </zip>
+    </target>
+
+    <!-- builds a runtime archive for end users who don't want to develop -->
+    <target name="jaer-runtime-archive" depends="jar">
+        <tstamp/>
+        <delete file="../../jaer-runtime-*.zip" />
+        <property name="runtimeZipFileName" value="../../jaer-runtime-${DSTAMP}.zip"/>
+        <zip destfile="${runtimeZipFileName}" level="9"
+             comment="jAER runtime release ${DSTAMP}- see hhttps://sourceforge.net/p/jaer/wiki/">
+            <zipfileset prefix="jAER-runtime"
+                        dir="../../"
+                        excludes="blender/**,
+                         **/*.zip,
+                         deviceFirmwarePCBLayout/**,
+                        jSmoothExeLauncher/**,
+                        **/*.private, **/*.hprof, **/*.log, **/*.ncb"
+            />
+        </zip>
+    </target>
+
+    <!--depends="jaer-runtime-archive"-->
+    <target name="jaer-runtime-release-upload"   >
+        <tstamp/>
+        <ftp
+            server="upload.sourceforge.net"
+            userid="anonymous"
+            password="project-jaer"
+            remotedir="incoming"
+            verbose="true"
+            passive="true">
+            <fileset file="../../jaer-runtime-${DSTAMP}.zip"/>
+        </ftp>
+    </target>
+
+    <!--
+    <target name="javadoc-ftp" depends="javadoc">
+        <ftp server="upload.sourceforge.net" remotedir="upload" binary="true" userid="anonymous" password="jaer-project">
+            <fileset dir="${dist.dir}">
+            <include name="jaer-javadoc.zip" />
+            </fileset>
+        </ftp>
+    </target>
+    -->
+
+    <!-- scp the javadoc to the project web pages at sourceforge.
+    This uses a private key file and trusts the host explicitly. The SF username is prompted for and then all javadoc is uploaded.
+    The link to the generated javadoc is http://jaer.sourceforge.net/javadoc
+    The key can be generated under linux with ssh-keygen -t dsa -Cusername@shell.sf.net
+    and then must be uploaded via SF's key managment system.
+    -->
+    <target name="jaer-javadoc-upload" depends="init">
+        <echo message="first run javadoc-archive target to build javadoc and zip archive of javadoc"/>
+        <input message="SourceForge username?" addproperty="javadoc.upload.username"/>
+        <!--        <input message="SourceForge password?" addproperty="javadoc.upload.password"/> -->
+        <scp
+            todir="${javadoc.upload.username},jaer@web.sourceforge.net:/home/groups/j/ja/jaer/htdocs/javadoc"
+            verbose="true"
+            keyfile="${basedir}/shell.sf.net.key.dsa.private"
+            passphrase=""
+            trust="true"
+        >
+            <fileset dir="${dist.dir}/javadoc" />
+        </scp>
+    </target>
+
+    <!-- builds a file with the output of svnversion that is used for the About dialogs -->
+    <!--TODO fix to get rev info from git-->
+    <target name="jaer-setBuildVersion" depends="init">
+        <tstamp/>
+        <echo message="Making build version file ${buildversion.outputfile} - you can ignore any error ${line.separator}generated here since it will only affect the Help/About... dialog." />
+        <delete file="${buildversion.outputfile}"/>
+        <!-- run version command to get revision numnber -->
+        <exec executable="git" failifexecutionfails="false" spawn="false" dir="${basedir}" output="${buildversion.outputfile}" searchpath="true">
+            <arg line="describe"/>
+        </exec>
+        <!-- make it a property line -->
+        <!--        <replaceregexp file="${buildversion.outputfile}"
+        match="(.*)"
+        replace="subversion.revisionNumber=\1"
+        byline="false"/>-->
+        <!-- run subwcrev (must have tortoisesvn installed and on PATH) to get svn revision numnber -->
+        <!--        <exec executable="subWCrev" failifexecutionfails="false" spawn="false" dir="${basedir}" output="${buildversion.outputfile}" append="true">
+            <arg line="."/>
+        </exec>-->
+        <!-- add a datestamp property -->
+        <echo message="build.date=${DSTAMP} at ${TSTAMP}" append="true" file="${buildversion.outputfile}" />
+        <concat>
+            <filelist dir="${basedir}" files="${buildversion.outputfile}"/>
+        </concat>
+    </target>
+
+
+    <target name="jaer-sign-jar" depends="jar">
+        <echo message="Self-signing jar"/>
+        <signjar jar="${dist.jar}" alias="jaer" keystore="keystore" storepass="jaerjaer"/>
+    </target>
+</project>
