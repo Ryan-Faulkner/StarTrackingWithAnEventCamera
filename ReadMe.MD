@@ -4,9 +4,13 @@ This Code uses a DAVIS Event Camera to track stars in the night sky, and through
 
 ### Required Libraries:
 JAER (https://github.com/SensorsINI/jaer), this whole code was built on top of this library so that it could use the inbuilt classes for dealing with the event camera and events
+
 OpenCV(https://opencv.org/)
+
 Java3D(http://www.java3d.org/)
+
 KDTree for Java(https://mvnrepository.com/artifact/de.biomedical-imaging.edu.wlu.cs.levy.cg/kdtree/1.0.3)
+
 Efficient Java Matrix Library (http://ejml.org/)
 
 ### To Run:
@@ -17,10 +21,13 @@ File -> Remote -> Enable Unicast Datagram (UDP) Output.
 I ran it at default port of 8991, sequence number enabled, address first enabled, using 4 byte adresses and timestamps, including timestamps, with a buffer size of 8912, and a timestamp multiplier of 1
 
 Should work as is, other than two DLL files which I'm currently manually importing at the start of StarTracking.Java, 
-you should see "System.load("C:\\Users\\ryanj_000\\Documents\\HonoursCode\\starTrackingBuiltOnJAER2\\starTrackingBuiltOnJAER\\lib\\opencv_java320.dll");" and another below it, at the start of the maint function
+you should see 
+
+"System.load("C:\\Users\\ryanj_000\\Documents\\HonoursCode\\starTrackingBuiltOnJAER2\\starTrackingBuiltOnJAER\\lib\\opencv_java320.dll");" and another similar line below it, both at the start of the main function
 replace these absolute paths with their location on your computer. If it doesn't work try properly downloading the libraries and building them on your computer as opposed to using the files included in this code.
 
 
+### Credits:
 The Star Tracking Code is based off the MATLAB implementation by Tat-Jun Chin and Samya Bagchi and Anders Eriksson and Andre van Schaik:
 Star Tracking using an Event Camera
 (https://arxiv.org/abs/1812.02895)
