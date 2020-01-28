@@ -33,6 +33,12 @@ import org.opencv.core.Scalar;
 /**
  *
  * @author ryanj
+ *
+ *
+ *
+ *                      This code determines which point in a new Frame corresponds to which point in the old frame, if any.
+ *                      It then returns the corresponding point pairs.
+ *
  */
 public class generateCorrespondences {
     transformForward transformer;
@@ -52,7 +58,6 @@ public class generateCorrespondences {
         ArrayList<double[]> original = new ArrayList();
         double[] distance = new double[locationsOld.size()];
         double[] temp;
-        //System.out.printf("old list is of size %d \n",locationsOld.size());
          List<Point> transformedLocationsOld = transformer.transform(tform,locationsOld,false,true);
          
         Mat oldImage = new Mat(180, 240, CV_8UC3, new Scalar(0, 0, 0));
@@ -80,15 +85,7 @@ public class generateCorrespondences {
             newImage.put((int) locationsNew.get(i).y,(int)  locationsNew.get(i).x, pixel);  
         }
         
-        //Mat element1 = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new  Size(2*3+ 1, 2*3+1));
-        
-        //Imgproc.dilate(newImage, newImage, element1);
-        //System.out.println("GENERATING");
-        //Imgcodecs.imwrite("C:\\Users\\ryanj\\Documents\\jaer-master\\starTrackingBuiltOnJAER\\testData\\results\\" + imageCount + "new.jpg", newImage); 
-        //Imgcodecs.imwrite("C:\\Users\\ryanj\\Documents\\jaer-master\\starTrackingBuiltOnJAER\\testData\\results\\" + imageCount + "transformed.jpg", predictImage); 
-        //Imgcodecs.imwrite("C:\\Users\\ryanj\\Documents\\jaer-master\\starTrackingBuiltOnJAER\\testData\\results\\" + imageCount + "old.jpg", oldImage); 
-        //imageCount++;
-        //System.out.printf("ASDSADSADSADSADASDSAtransformedLO is \n");*/
+        /
         for(int j = 0; j < locationsNew.size(); j++)
         {
             temp = new double[]{locationsNew.get(j).x, locationsNew.get(j).y};
@@ -100,10 +97,7 @@ public class generateCorrespondences {
             predicted.add(new double[]{transformedLocationsOld.get(k).x, transformedLocationsOld.get(k).y});
             real.add((double[]) newTree.nearest(predicted.get(predCounter)));
             original.add(new double[]{transformedLocationsOld.get(k+1).x, transformedLocationsOld.get(k+1).y});
-            /*System.out.println("AND THE MATCH IS:");
-            System.out.printf("%d, %d\n",(int)predicted.get(predCounter)[0], (int)predicted.get(predCounter)[1]);
-            System.out.printf("%d, %d\n",(int)real.get(predCounter)[0],(int) real.get(predCounter)[1]);
-            System.out.printf("%f, %f\n",original.get(predCounter)[0], original.get(predCounter)[1]);*/
+           
             double left = (real.get(predCounter)[0]-predicted.get(predCounter)[0]) * (real.get(predCounter)[0]-predicted.get(predCounter)[0]);
             double right = (real.get(predCounter)[1]-predicted.get(predCounter)[1]) * (real.get(predCounter)[1]-predicted.get(predCounter)[1]);
             distance[predCounter] = Math.sqrt(left + right);
@@ -116,8 +110,7 @@ public class generateCorrespondences {
         predicted = new ArrayList(predictedCopy); 
         original = new ArrayList(originalCopy); 
         double meanDistance = 0;
-        //Collections.sort(predicted, Comparator.comparing(s -> distance[predictedCopy.indexOf(s)]));
-        //Collections.sort(real, Comparator.comparing(s -> distance[realCopy.indexOf(s)]));
+      
         for(int counter = 0; counter < predicted.size(); counter++)
         {
             double min = Integer.MAX_VALUE;
@@ -150,7 +143,6 @@ public class generateCorrespondences {
         meanDistance = meanDistance / predicted.size();
         
         int npo = (int) Math.ceil(predicted.size()*0.9);
-        //System.out.printf("npo is %d \n",npo);
         List<Point> idMatches = new ArrayList<>();
         for(int i = 0; i < npo; i++)
         {

@@ -31,6 +31,11 @@ import static org.opencv.core.Core.flip;
 /**
  *
  * @author ryanj
+ *
+ *
+ *          This code produces an event image from a list of points where an event has been logged in the data packet
+ *
+ *
  */
 public class MakeEventImage {
     
@@ -66,7 +71,6 @@ public class MakeEventImage {
         {
             temp = eventMat.get(events.elementData[i].getY(),events.elementData[i].getX());
             temp[0]++;
-            //System.out.println("X: "+ events.elementData[i].getX() + " Y: " + events.elementData[i].getY() + " time: " + events.elementData[i].timestamp);
             eventMat.put(events.elementData[i].getY(),events.elementData[i].getX(),temp);
         }
         //Next I need to undistort the image
@@ -87,12 +91,6 @@ public class MakeEventImage {
             }
         }
         Point p = new Point(-1,-1);
-        //Imgproc.filter2D(eventMat,eventMat,-1,kernel,p,0,BORDER_REPLICATE);
-        //Imgproc.threshold(eventMat, eventMat, 3, 0, Imgproc.THRESH_TOZERO);
-        
-        
-        //Mat tempMat = eventMat;
-        //Imgproc.filter2D(tempMat,eventMat,-1,kernel2,p,0,BORDER_REPLICATE);
         
         return eventMat;
     }

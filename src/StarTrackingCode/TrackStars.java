@@ -49,10 +49,12 @@ import org.opencv.utils.Converters;
 /**
  *
  * @author ryanj
+ *
+ *
+ *      This is the code for tracking the movement of stars between Frames, where the bulk of the work is done
+ *
  */
 public class TrackStars {
-        //firstly there's offset stuff in OG code which seem to be just to prevent wasting CPU time when there are no stars visible
-        //I'm just gonna assume there's always stars visible for now because that's easier/probably true if camera is facing sky at night
     Mat[] past12;
     Mat[] past12Cent;
     int imageCount;
@@ -89,9 +91,9 @@ public class TrackStars {
         currentPose2 = new Rotation(1,0,0,0,false);
        
     }
-    //copied form opencv C++ library as can't find it in Java version
-    
 
+
+    //copied form opencv C++ library and converted to run in Java as can't find it in Java version of openCV
 // Converts a given Rotation Matrix to Euler angles
 // Convention used is Y-Z-X Tait-Bryan angles
     //except convention I see is X-Z-Y if Matlab is to be believed - work out which is which later
@@ -115,22 +117,16 @@ public class TrackStars {
             bank = 0;
             attitude = CV_PI/2;
             heading = atan2(m02,m22);
-            //System.out.println("1");
         }
         else if (m10 < -0.998) { // singularity at south pole
             bank = 0;
             attitude = -CV_PI/2;
-            heading = atan2(m02,m22);
-            //System.out.println("2");
-        }
+            heading = atan2(m02,m22);        }
         else
         {
             bank = atan2(-m12,m11);
             attitude = asin(m10);
             heading = atan2(-m20,m00);
-            //System.out.println(m10);
-            //System.out.println(attitude);
-            //System.out.println("3");
         }
         euler.put(0,0,bank);
         euler.put(1,0,attitude);
@@ -144,7 +140,6 @@ public class TrackStars {
     {
         
         Imgproc.threshold(centroid, centroid, 200, CV_THRESH_TOZERO, 0);
-        //Imgcodecs.imwrite("testData/centroidImage" + counterer +".png", centroid);
         
         counterer++;
         Mat heirarchy = new Mat();
@@ -172,17 +167,9 @@ public class TrackStars {
         Mat coloured = new Mat(centroid.height(), centroid.width(), CV_8UC3, new Scalar(0, 0, 0));
         Mat realColoured = new Mat(centroid.height(), centroid.width(), CV_8UC3, new Scalar(0, 0, 0));
         Mat predictions = new Mat(centroid.height(), centroid.width(), CV_8UC3, new Scalar(0, 0, 0));
-        //
-        //if (number of events in eventImage is above APC threshold):
-        //
         tempMat = new Mat();
-        //System.out.println(tempMat);
-        Core.findNonZero(centroid, tempMat);
-        //Imgcodecs.imwrite("testData\\artificial data\\wtf" + ".jpg", centroid);
-        /*System.out.println(tempMat.get(0,0)[0] + "  " + tempMat.get(0,0)[1]);
-        System.out.println("first is " + centroid.get((int)tempMat.get(0, 0)[1],(int)tempMat.get(0, 0)[0])[0]);
-        System.out.println("first is " + centroid.get((int)tempMat.get(0, 0)[1],(int)tempMat.get(0, 0)[0])[0]);
-        System.out.println(tempMat);*/
+        Core.findNonZero(centroid, tempMat
+
         if(tempMat.dims() == 0 || tempMat.empty())
         {
             //no matches can be found so uhh no matches
@@ -198,7 +185,6 @@ public class TrackStars {
         MatOfPoint tempMapPoint = new MatOfPoint(tempMat);
         List<Point> locationsNew = new ArrayList<Point>();
         Converters.Mat_to_vector_Point(tempMapPoint,locationsNew);
-            //System.out.println("LNew is : " + locationsNew);
         
         Core.findNonZero(centroidMat2, tempMat);
         if(tempMat.dims() == 0 || tempMat.empty())
@@ -221,7 +207,7 @@ public class TrackStars {
         Mat [] relRs = new Mat[farthest-nearest];
         for(int i = nearest; i < farthest; i++)
         {
-            //vset code goes here I'm also skipping cause not gonna be easy to turn into java
+            //vset code goes here I'm also skipping cause not gonna be easy to turn into java and not required for this
            
             if(past12[i] == null)
             {
@@ -231,7 +217,6 @@ public class TrackStars {
             {
                 //System.out.println("ALL G");
             }
-            //System.out.println(past12Cent[i]);
             tempMat = new Mat();
             Core.findNonZero(past12Cent[i], tempMat);
             if(tempMat.dims() == 0 || tempMat.empty())
@@ -246,7 +231,6 @@ public class TrackStars {
             eventMat = past12Cent[i].clone();
             tempMat = eventMat;
             Imgproc.dilate(tempMat, eventMat, element);
-            //Imgcodecs.imwrite("dilatedImage" + ".jpg", eventMat);
             
             contours = new ArrayList<>();
             Imgproc.findContours(eventMat, contours, heirarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);
@@ -309,7 +293,7 @@ public class TrackStars {
             }
             if(past12[i] == null)
             {
-                System.out.println("WATGA333333F");
+                System.out.println("Error probably occured");
             }
             varNewX = varNewX / (locationsNew.size()-1); 
             varNewY = varNewY / (locationsNew.size()-1);
@@ -317,47 +301,7 @@ public class TrackStars {
             {
                 
                 int connectedCount = 0;
-                //System.out.println(locationsOld);
-                Mat tform = ticper.tform(locationsOld, locationsNew);
-                //Imgcodecs.imwrite("testData/results/centroidImage" + counterer +".jpg", centroid);
-                /*System.out.println("It is:" + tform.get(0,0).length);
-                System.out.print(tform.get(0, 0)[0]);
-                System.out.print(" ");
-                System.out.print(tform.get(0, 1)[0]);
-                System.out.print(" ");
-                System.out.println(tform.get(0, 2)[0]);
-                System.out.print(tform.get(1, 0)[0]);
-                System.out.print(" ");
-                System.out.print(tform.get(1, 1)[0]);
-                System.out.print(" ");
-                System.out.println(tform.get(1, 2)[0]);
-                System.out.print(tform.get(2, 0)[0]);
-                System.out.print(" ");
-                System.out.print(tform.get(2, 1)[0]);
-                System.out.print(" ");
-                System.out.println(tform.get(2, 2)[0]);*//*
-                
-                if(i == nearest)
-                {
-                    Mat eulerr;
-                    //System.out.println("Angles");
-                    eulerr = rot2euler(tform);
-                    //System.out.println(eulerr.get(0,0)[0]);
-                    //System.out.println(eulerr.get(1,0)[0]);
-                    //System.out.println(eulerr.get(2,0)[0]);
-                    if(eulerr.get(0, 0)[0] < Math.PI/2 && eulerr.get(1, 0)[0] < Math.PI/2 && eulerr.get(2, 0)[0] < Math.PI/2)
-                    {
-                        pitch += eulerr.get(0, 0)[0];
-                        roll += eulerr.get(1, 0)[0];
-                        yaw += eulerr.get(2, 0)[0];
-                    }
-                        /*
-                    System.out.println("roll " + roll);
-                    System.out.println("pitch " + pitch);
-                    System.out.println("yaw " + yaw);
-                    System.out.println();*//*
-                }
-                */
+                Mat tform = ticper.tform(locationsOld, locationsNew)
                 relRs[i] = tform;
                 /*
                 
@@ -396,7 +340,7 @@ public class TrackStars {
                 generator.imageCount + "current.jpg", centroid);
                 //*/
                 
-                //don't need connections if just showing on screen the thing lol
+                //don't need connections if just showing on screen the thing 
                 
                 List<Point> transformedOld = generator.generate(locationsOldDilated,locationsNewDilated,tform);
                 boolean [] connected= new boolean[transformedOld.size()];

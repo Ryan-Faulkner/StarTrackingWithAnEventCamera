@@ -33,6 +33,13 @@ import org.opencv.core.Point;
 /**
  *
  * @author ryanj
+ *
+ *
+ *
+ *          This code runs Trimmed Iterative Closest Point Algorithm 
+ *          in order to determine the movement from one frame to the next
+ *
+ *
  */
 public class ticp {
     int iterations = 200;
@@ -47,7 +54,7 @@ public class ticp {
     }
     Mat tform(List<Point> locationsOld, List<Point> locationsNew) throws KeySizeException, KeyDuplicateException
     {
-        Mat tForm = Mat.eye(3, 3, 5); //5 means CV_32F{
+        Mat tForm = Mat.eye(3, 3, 5); //5 means CV_32F
         Mat tempTForm;
         Mat tempTForm2;
         double npo= Math.ceil(0.8*locationsOld.size());
@@ -57,21 +64,15 @@ public class ticp {
         ArrayList<double[]> real = new ArrayList();
         ArrayList<double[]> predicted = new ArrayList();
         double[] distance = new double[locationsOld.size()];
-        //System.out.println("Now");
         for(int j = 0; j < locationsNew.size(); j++)
         {
-           // System.out.println(locationsNew.get(j).x + " " + locationsNew.get(j).y);
             temp = new double[]{locationsNew.get(j).x, locationsNew.get(j).y};
             kdTree.insert(temp, temp);
         }
-        //System.out.println("Prev");
         for(int l = 0; l < locationsOld.size(); l++)
         {
-          //   System.out.println(locationsOld.get(l).x + " " + locationsOld.get(l).y);
             predicted.add(new double[]{locationsOld.get(l).x, locationsOld.get(l).y});
-        }
-        //System.out.println("Done");
-        int i = 0;
+        }        int i = 0;
         for(i = 0; i < iterations; i++)
         {
             predicted = new ArrayList();
@@ -79,9 +80,6 @@ public class ticp {
             {
                 predicted.add(new double[]{locationsOld.get(l).x, locationsOld.get(l).y});
             }
-            //Mat element1 = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new  Size(2*3+ 1, 2*3+1));
-            //Mat newImage = new Mat(180, 240, CV_8UC3, new Scalar(0, 0, 0));
-            //Mat newImage2 = new Mat(180, 240, CV_8UC3, new Scalar(0, 0, 0));
         
             real = new ArrayList();
            for(int k = 0; k < locationsOld.size();k++)
@@ -91,29 +89,9 @@ public class ticp {
                 double left = (real.get(k)[0]-predicted.get(k)[0]) * (real.get(k)[0]-predicted.get(k)[0]);
                 double right = (real.get(k)[1]-predicted.get(k)[1]) * (real.get(k)[1]-predicted.get(k)[1]);
                 distance[k] = Math.sqrt(left + right);
-                /*double[] pixel = new double[3];
-                pixel[0] = 255;
-                pixel[1] = 255;
-                pixel[2] = 255;
-                newImage2.put((int) predicted.get(k)[1],(int)  predicted.get(k)[0], pixel); 
-                */
-                
-               // System.out.printf("real is %f, predicted is %f, distance is %f\n", real.get(k)[0],predicted.get(k)[0],distance[k]);
-               // System.out.printf("real is %f, predicted is %f, distance is %f\n", real.get(k)[1],predicted.get(k)[1],distance[k]);
+               
             }
-            /*Imgproc.dilate(newImage, newImage, element1);   
-            Imgproc.dilate(newImage2, newImage2, element1);   */  
-            /*double[] pixel = new double[3];
-            pixel[0] = 255;
-            pixel[1] = 255;
-            pixel[2] = 255;
-            for(int j = 0; j < locationsNew.size(); j++)
-           {
-               newImage.put((int)locationsNew.get(j).y,(int)locationsNew.get(j).x, pixel);
-           }
-            //System.out.println("done");
-            //Imgcodecs.imwrite("testData/steps/" + i + ".jpg", newImage); 
-            //Imgcodecs.imwrite("testData/steps/prediccted" + i + ".png", newImage2);*/
+            
             for(int counter = 0; counter < predicted.size(); counter++)
             {
                 double min = Integer.MAX_VALUE;
@@ -168,24 +146,6 @@ public class ticp {
             Core.gemm(tempTForm2, tempTForm, 1, tForm, 0, tForm);
             prev_mean_distance = currentMean;
         }
-        //System.out.printf("Iterations is %d\n", i);
-        //System.out.println("CURRENT IS " + currentMean);
-        /*System.out.println("TFORM:");
-        System.out.print(tForm.get(0, 0)[0]);
-        System.out.print(" ");
-        System.out.print(tForm.get(0, 1)[0]);
-        System.out.print(" ");
-        System.out.println(tForm.get(0, 2)[0]);
-        System.out.print(tForm.get(1, 0)[0]);
-        System.out.print(" ");
-        System.out.print(tForm.get(1, 1)[0]);
-        System.out.print(" ");
-        System.out.println(tForm.get(1, 2)[0]);
-        System.out.print(tForm.get(2, 0)[0]);
-        System.out.print(" ");
-        System.out.print(tForm.get(2, 1)[0]);
-        System.out.print(" ");
-        System.out.println(tForm.get(2, 2)[0]);*/
         return tForm;
     } 
    

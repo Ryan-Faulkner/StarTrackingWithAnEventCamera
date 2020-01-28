@@ -42,6 +42,14 @@ import org.opencv.core.Size;
 /**
  *
  * @author ryanj
+ *
+ *
+ *
+ *      
+ *      This code averages the rotations between frames so that the projected rectangle doesn't
+*       jump around jerkily / and so that a small error between two frames doesn't have a large effect
+ *
+ *
  */
 public class RotAvg {
     Mat[][] relativeRotations;
@@ -595,14 +603,6 @@ public class RotAvg {
                 theta -= 2*Math.PI;
             }
             
-           /* System.out.println("Q0");
-            System.out.println(w.get(i).getQ0());
-            System.out.println("Q1");
-            System.out.println(w.get(i).getQ1());
-            System.out.println("Q2");
-            System.out.println(w.get(i).getQ2());
-            System.out.println("Q3");
-            System.out.println(w.get(i).getQ3());*/
             aux = theta/Math.sqrt( Math.pow(w.get(i).getQ1(),2) + Math.pow(w.get(i).getQ2(),2) + Math.pow(w.get(i).getQ3(),2));
             wMat.put(i, 0, w.get(i).getQ1() * aux);
             wMat.put(i, 1, w.get(i).getQ2() * aux);

@@ -30,6 +30,10 @@ import org.opencv.imgproc.Moments;
 /**
  *
  * @author ryanj
+ *
+ *                      This code takes an event image and removes noise, as well as reducing each star to only it's central pixel
+ *
+ *
  */
 public class MakeCentroidImage {
     
@@ -59,32 +63,6 @@ public class MakeCentroidImage {
                 centroidMat.put(Math.toIntExact(Math.round(centroid.y)), Math.toIntExact(Math.round(centroid.x)), 255);
             }
         }
-        /*
-        contours = new ArrayList<>();
-        Mat tempMat = centroidMat;
-        int dilationSize = 15;
-        Mat element = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new Size(2*dilationSize + 1, 2*dilationSize+1));
-        Imgproc.dilate(tempMat, eventMat, element);
-        Imgcodecs.imwrite("dilatedImage" + ".jpg", eventMat);
-        Imgproc.findContours(eventMat, contours, heirarchy, Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);
-        
-        Mat centroidMat2 =  Mat.zeros(180,240,CV_8UC1);
-        for (MatOfPoint contour : contours) {
-            Moments moments = Imgproc.moments(contour);
-            Point centroid = new Point();
-            centroid.x = moments.get_m10() / moments.get_m00();
-            centroid.y = moments.get_m01() / moments.get_m00();
-            if (centroid.x<=width && centroid.y<=height)
-            {
-                centroidMat2.put(Math.toIntExact(Math.round(centroid.y)), Math.toIntExact(Math.round(centroid.x)), 255);
-            }
-        }
-        
-        
-        tempMat = centroidMat2;
-        Imgproc.dilate(tempMat, eventMat, element);
-        Imgcodecs.imwrite("dilatedImage2" + ".jpg", eventMat);
-        return centroidMat2;
-        */return centroidMat;
+        return centroidMat;
     }
 }

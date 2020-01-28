@@ -43,6 +43,13 @@ import org.opencv.imgproc.Imgproc;
 /**
  *
  * @author ryanj
+ *
+ *
+ *
+ *
+ *              This is the main function which runs everything. 
+ *              It gets packets sent through UDP and then calls other functions to process them and to display the result.
+ *
  */
 
 
@@ -58,9 +65,11 @@ public class StarTracking {
     public static void main(String[] args) throws IOException, KeySizeException, KeyDuplicateException//, KeySizeException, KeyDuplicateException
     {
         gui3d = new Gui3D();
+        //CHANGE THESE TWO LINES TO THE LOCATION OF THE LIBRARIES ON YOUR LOCAL COMPUTER
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         System.load("C:\\Users\\ryanj_000\\Documents\\HonoursCode\\starTrackingBuiltOnJAER2\\starTrackingBuiltOnJAER\\lib\\opencv_java320.dll");
         System.load("C:\\Users\\ryanj_000\\Documents\\HonoursCode\\starTrackingBuiltOnJAER2\\starTrackingBuiltOnJAER\\lib\\j3dcore-ogl.dll");
-         System.out.println("java.library.path: " + System.getProperty("java.library.path"));
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         Mat testMat = new Mat();
         // declare constant values e.g. port
         final int port = 8991;
@@ -89,8 +98,7 @@ public class StarTracking {
         Mat centroidMat;
         int counter = 0;
         while (true) 
-        { //long millis=System.currentTimeMillis();
-           
+        {            
             eventCounter = 0;
             // Step 2 : create a DatgramPacket to receive the data. 
             DpReceive = new DatagramPacket(receive, receive.length); 
@@ -110,7 +118,6 @@ public class StarTracking {
                 timestamps[eventCounter] = new BigInteger(Arrays.copyOfRange(receive, i, i+4)).intValue();
                 eventCounter++;
             }
-            //System.out.printf("Obtained %d events %n", eventCounter);
             // Clear the buffer after every message. 
             receive = new byte[65535]; 
             
@@ -138,7 +145,6 @@ public class StarTracking {
                            frameStart += frameDuration;
                             continue;
                         }
-                        //System.out.println(frameStart);
                         Mat colouredCentroid = tracker.track(centroidMat);
                         //turn Mat into image:
                         //Mat imageMat = eventMat;
@@ -162,27 +168,18 @@ public class StarTracking {
                             angles2[1] = 0; //yaw
                             angles2[2] = 0; //roll
                         }   
-                        /*System.out.println(tracker.pitch);
-                        System.out.println(tracker.yaw);
-                        System.out.println(tracker.roll);                       
-                        System.out.println(angles[0]);                      
-                        System.out.println(angles[1]);                      
-                        System.out.println(angles[2]);*/
                        gui3d.updateRotationAbs2(angles[0],angles[1],angles[2]);
+                       //the line below can be uncommented to show what it looks like without rotation averaging
+                       //you will have to edit the gui3d code to that setting as well though
                        //gui3d.updateRotationAbs(angles2[0],angles2[1],angles2[2]);
                        
-                       //I need to work out how to get 2 gui up to compare side by side
                        //gui3d.updateRotationAbs(tracker.pitch, tracker.yaw, tracker.roll); 
                             
-                        
-                        //Mat imageMat = colouredCentroid.clone();
                         Mat imageMat = colouredCentroid.clone();
                         int dilateSize = 5;
                         Mat element1 = Imgproc.getStructuringElement(Imgproc.MORPH_RECT, new  Size(2*dilateSize+ 1, 2*dilateSize+1));
                         Mat tempImage = imageMat;
-                       // Imgproc.threshold(centroidMat, imageMat,0 ,255,Imgproc.THRESH_BINARY);
                         Imgproc.dilate(imageMat, tempImage, element1);
-                        //Imgcodecs.imwrite("PosterImages/colourful/" + tracker.imageCount + ".jpg", tempImage);
                         Mat resizeImage = new Mat();
                         Size scaleSize = new Size(tempImage.width()*2,tempImage.height()*2);
                         Imgproc.resize(tempImage, resizeImage, scaleSize , 0, 0, CV_INTER_AREA);
@@ -200,8 +197,6 @@ public class StarTracking {
                             e.printStackTrace();
                         }
                         //display image
-                        //System.out.println(timestamps[j]);
-                        //System.out.println("Is the time");
                         gui.displayImage(bufImage);
                         eventsInImage = 0;
                         
@@ -211,10 +206,6 @@ public class StarTracking {
                 else if(timestamps[j] < frameStart)
                 {
                     frameStart = timestamps[j];
-                    //tracker.roll = 0;
-                    //tracker.pitch = 0;
-                    //tracker.yaw = 0;
-                    //System.out.println("This should only print when timer resets");
                 }
                 currentEvent.address = addresses[j];
                 currentEvent.timestamp = timestamps[j];
@@ -223,12 +214,7 @@ public class StarTracking {
                 
             }
         } 
-       // System.exit(0);
         
     } 
     
 }
-
-//winner is pitch for roll data, with almost 10 times as much being the change
-//for pitch data, pitch at 269, yaw at 224, roll at 15
-//for yaw data pitch at 511, roll at 277, yaw at 16

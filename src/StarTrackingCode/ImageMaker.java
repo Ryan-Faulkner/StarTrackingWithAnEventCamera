@@ -23,6 +23,12 @@ import org.opencv.imgcodecs.Imgcodecs;
 /**
  *
  * @author ryanj
+ *
+ *
+ *
+ *                              This code is not part of the main function, but separate, and to be used when saving images to the computer system.
+ *
+ *
  */
 public class ImageMaker {
 
@@ -43,7 +49,6 @@ public class ImageMaker {
         final MakeEventImage imageMaker = new MakeEventImage();
         final MakeCentroidImage centroidMaker = new MakeCentroidImage();
         TrackStars tracker = new TrackStars();
-        //final GUI gui = new GUI();
         final EventExtractor2D extractor = chip.getEventExtractor();
         
         //declare variables
@@ -84,7 +89,6 @@ public class ImageMaker {
                 timestamps[eventCounter] = new BigInteger(Arrays.copyOfRange(receive, i, i+4)).intValue();
                 eventCounter++;
             }
-            //System.out.printf("Obtained %d events %n", eventCounter);
             // Clear the buffer after every message. 
             receive = new byte[65535]; 
             
@@ -102,31 +106,13 @@ public class ImageMaker {
                         packet = new AEPacketRaw();
                         eventMat = imageMaker.returnMat(processedPacket);
                         Mat threshed = eventMat;
-                       //Imgproc.threshold(eventMat, threshed, 1, 255, Imgproc.THRESH_BINARY);
                         Core.multiply(eventMat, new Scalar(50), threshed);
-                       //eventMat.convertTo(eventMat,-1,250,0);
                        
                        Imgcodecs.imwrite("PosterImages/NoFilter/im" + imageCounter + ".jpg", threshed);
                       
                         centroidMat = centroidMaker.returnCentroid(eventMat);
                        Imgcodecs.imwrite("PosterImages/Undilated/im" + imageCounter + ".jpg", centroidMat);
                        imageCounter++;
-                       /*Mat resizeImage = new Mat();
-                        Size scaleSize = new Size(threshed.width()*2,threshed.height()*2);
-                        Imgproc.resize(threshed, resizeImage, scaleSize , 0, 0, CV_INTER_AREA);
-                        MatOfByte matOfByte = new MatOfByte();
-                        Imgcodecs.imencode(".jpg", resizeImage, matOfByte); 
-
-                        byte[] byteArray = matOfByte.toArray();
-                        BufferedImage bufImage = null;
-                        try {
-
-                            InputStream in = new ByteArrayInputStream(byteArray);
-                            bufImage = ImageIO.read(in);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                       gui.displayImage(bufImage);*/
                         
                     }
                     frameStart += frameDuration;

@@ -43,6 +43,15 @@ import org.opencv.imgproc.Imgproc;
 /**
  *
  * @author ryanj
+ *
+ *
+ *
+ *    This code is a bit of a mess, it is not part of the main program, and instead a separate function I wrote to determine the calibration matrix of the camera I was using.
+ *
+ *
+ *
+ *
+ *
  */
 public class Calibrator {
     Calibrator()

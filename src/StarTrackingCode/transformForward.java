@@ -31,11 +31,20 @@ import org.opencv.core.Point;
 /**
  *
  * @author ryanj
+ *
+ *    
+ *
+ *                  This code applies a matrix tform to a list of points, and returns the new list of points
+ *                  It also has two boolean values as inputs, to determine whether any cleanup of the points is done
+ *                  and whether the original list is also returned
+ *
  */
 public class transformForward {
     Mat K;
     transformForward()
     {   
+
+        //If you use a different camera, you will likely have to change this matrix
         K = new Mat(3,3,CV_32FC1);
         K.put(0, 0, 246.43059488719612);
         K.put(0, 1, 0);
@@ -46,27 +55,9 @@ public class transformForward {
         K.put(2, 0, 0);
         K.put(2, 1, 0);
         K.put(2, 2, 1);
-       /* 
-        K.put(0, 0, 1);
-        K.put(0, 1, 0);
-        K.put(0, 2, 0);
-        K.put(1, 0, 0);
-        K.put(1, 1, 1);
-        K.put(1, 2, 0);
-        K.put(2, 0, 0);
-        K.put(2, 1, 0);
-        K.put(2, 2, 1);
-        */
     }
     List<Point> transform(Mat tform, List<Point> original, boolean cleanUp, boolean returnOriginalList)
-    {/*
-        for(int i = 0; i < 3; i++)
-       {
-           System.out.println("TFORM IS");
-           System.out.println(tform.get(i, 0)[0]);
-           System.out.println(tform.get(i, 1)[0]);
-           System.out.println(tform.get(i, 2)[0]);
-       }*/
+    {
         
         
         
@@ -76,9 +67,6 @@ public class transformForward {
             ogMat.put(i, 0, original.get(i).x);
             ogMat.put(i, 1, original.get(i).y);
             ogMat.put(i, 2, 1);
-            //ogMat.put(i, 0, original.get(i).x);
-            //ogMat.put(i, 1, original.get(i).y);
-            //ogMat.put(i, 2, 1);
         }
          
         Mat A = new Mat();
@@ -94,7 +82,6 @@ public class transformForward {
         for(int j = 0; j< original.size(); j++)
         {
             tempPoint = new Point((A.get(j, 0)[0]/A.get(j, 2)[0]*1),(A.get(j, 1)[0]/A.get(j, 2)[0]*1));
-            //tempPoint = new Point((A.get(j, 0)[0]/A.get(j, 2)[0]),(A.get(j, 1)[0]/A.get(j, 2)[0]));
             transformedPoints.add(tempPoint);
         }
         if(cleanUp)

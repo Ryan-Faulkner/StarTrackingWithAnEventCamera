@@ -32,6 +32,12 @@ import org.opencv.core.Point;
 /**
  *
  * @author ryanj
+ *
+ *
+ *          This code is kept for posterity/in case it is useful later, 
+ *          but was written by me to test that my Rotation Averaging code was working properly.
+ *          As it has served that purpose, and I am confident the code works, it's job is done.
+ *
  */
 public class RotAvgTester { 
     
