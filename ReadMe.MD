@@ -6,7 +6,7 @@ It can produce both the stars colour-coded as they move across the camera's fiel
 
 ![Initial Rectangle Position](/images/rectangle.png) 
 
-![Second Rectangle Position]("/images/rectangle 1.png")
+![Second Rectangle Position](/images/rectangle_1.png)
 
 ### Required Libraries:
 JAER (https://github.com/SensorsINI/jaer), this whole code was built on top of this library so that it could use the inbuilt classes for dealing with the event camera and events
