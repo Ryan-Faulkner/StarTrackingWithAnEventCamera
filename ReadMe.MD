@@ -2,6 +2,12 @@
 
 This Code uses a DAVIS Event Camera to track stars in the night sky, and through this track movement of the camera between frames (and thus the moevement of whatever the camera is attached to).
 
+It can produce both the stars colour-coded as they move across the camera's field of view, as well as a 3D visualisation of the camera as a rectangle, rotating in real time in the same direction as the camera.
+
+![Initial Rectangle Position](/images/rectangle.png) 
+
+![Second Rectangle Position](/images/rectangle 1.png)
+
 ### Required Libraries:
 JAER (https://github.com/SensorsINI/jaer), this whole code was built on top of this library so that it could use the inbuilt classes for dealing with the event camera and events
 
@@ -18,7 +24,8 @@ Run the code as is, and also open a JAER viewer. The camera input can be sent fr
 
 File -> Remote -> Enable Unicast Datagram (UDP) Output.
 
-I ran it at default port of 8991, sequence number enabled, address first enabled, using 4 byte adresses and timestamps, including timestamps, with a buffer size of 8912, and a timestamp multiplier of 1
+![JAER Settings](/images/JAERsettings.png)
+
 
 Should work as is, other than two DLL files which I'm currently manually importing at the start of StarTracking.Java, 
 you should see 
