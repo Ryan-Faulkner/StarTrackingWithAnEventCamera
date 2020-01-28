@@ -41,3 +41,5 @@ The Rotation Averaging Code is based off the C++ code by Álvaro Parra:
 iRotAvg (https://github.com/ajparra/iRotAvg)
 As part of the paper by Parra, Alvaro and Chin, Tat-Jun and Eriksson, Anders and Reid, Ian:
 Visual SLAM: Why Bundle Adjust? (https://cs.adelaide.edu.au/~aparra/publication/parra19_icra/)
+
+Also a word of thanks to my two supervisors who gave me feedback and guidance as I worked on this project, Prof Ian Reid and Dr Tat-Jun Chin
