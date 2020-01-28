@@ -4,7 +4,9 @@ This Code uses a DAVIS Event Camera to track stars in the night sky, and through
 
 It can produce both the stars colour-coded as they move across the camera's field of view, as well as a 3D visualisation of the camera as a rectangle, rotating in real time in the same direction as the camera.
 
-![Initial Rectangle Position](/images/rectangle) ![Second Rectangle Position](/images/rectangle 1.png)
+![Initial Rectangle Position](/images/rectangle.png) 
+
+![Second Rectangle Position](/images/rectangle 1.png)
 
 ### Required Libraries:
 JAER (https://github.com/SensorsINI/jaer), this whole code was built on top of this library so that it could use the inbuilt classes for dealing with the event camera and events
